@@ -7,7 +7,8 @@ var userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   festival: [{type: Schema.Types.ObjectId, ref:"Festival"}]
 });
