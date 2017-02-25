@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// our custom middleware to add user to req
+app.use( require('./config/auth') );
 app.use(methodOverride('_method'))
 app.use('/', index);
 app.use('/users', users);
