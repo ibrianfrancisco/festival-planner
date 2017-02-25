@@ -6,13 +6,16 @@ var artistSchema = new mongoose.Schema({
   endTime: Date
 });
 
-var festivalSchema = new mongoose.Schema({
-  title: String,
+var dateSchema = new mongoose.Schema({
   stageName: [String],
   stageArtist: [artistSchema],
-  date: Date,
   startDate: Date,
   endDate: Date,
+})
+
+var festivalSchema = new mongoose.Schema({
+  title: String,
+  date: [dateSchema],
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
