@@ -32,8 +32,8 @@
             <li>&nbsp;&nbsp;<a ui-sref="home" class="left brand-logo">JWT Todos</a></li>
           </ul>
           <ul class="right">
-            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="newTodo">New Todo</a></li>
-            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="todos">Your Todos</a></li>
+            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="#">New Todo</a></li>
+            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="#">Your Todos</a></li>
             <li ng-hide="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-out-dropdown"><i class="material-icons right">perm_identity</i></a></li>
             <li ng-show="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-in-dropdown"><i class="material-icons right">perm_identity</i></a></li>
           </ul>
