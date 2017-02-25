@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-  angular.module('app', ['ui.router', 'ngAnimate'])
+  angular.module('app', ['ui.router', 'ngAnimate', 'ngResource'])
     .config(configRoutes)
     .run(runBlock);
 
@@ -16,9 +16,11 @@
       });
     }
 
-  configRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
+  configRoutes.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
-  function configRoutes($stateProvider, $urlRouterProvider) {
+  function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
+
+    $httpProvider.interceptors.push('AuthInterceptor');
 
     $stateProvider
 

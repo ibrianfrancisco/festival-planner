@@ -5,7 +5,7 @@ module.exports = function(req, res, next) {
   var token = req.body.token || req.query.token || req.get('Authorization');
   if (token) {
     token = token.replace('Bearer ', '');
-    jtw.verify(token, SECRET, function(err, decoded) {
+    jwt.verify(token, SECRET, function(err, decoded) {
       if (!err) {
         req.user = decoded.user;
         next();

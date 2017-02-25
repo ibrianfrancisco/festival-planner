@@ -10,9 +10,8 @@
     var vm = this;
 
     vm.logout = function() {
-      UserService.logout().then(function() {
-        $state.go('home');
-      });
+      UserService.logout();
+      $state.go('home');
     };
 
     vm.getUser = UserService.getUser;

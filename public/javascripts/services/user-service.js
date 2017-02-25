@@ -4,9 +4,9 @@
   angular.module('app')
     .factory('UserService', userService);
 
-  userService.$inject = ['$http'];
+  userService.$inject = ['$http', 'TokenService'];
 
-  function userService($http) {
+  function userService($http, TokenService) {
 
     var user = null;
 
@@ -24,38 +24,33 @@
     });
 
     function login(credentials) {
-      return $http.post('/api/users/login', credentials).then(function(res) {
-        user = res.data;
-      }, function(res) {
-        user = null;
-      });
+      return $http.post('/api/users/login', credentials);
     }
 
     function logout() {
-      return $http.get('/api/users/logout').then(function(res) {
-        user = null;
-      }, function(res) {
-        user = null;
-      });
+      TokenService.removeToken();
     }
 
     function signup(userData) {
-      return $http.post('/api/users', userData).then(function(res) {
-        user = res.data;
-      }, function(res) {
-        user = null;
-      });
+      return $http.post('/api/users', userData);
     }
 
     function getUser() {
-      return user;
+      return getUserFromToken();
     }
 
     function isLoggedIn() {
-      return !!user;
+      return !!getUserFromToken();
     }
 
     return service;
+
+    // helper functions
+
+    function getUserFromToken() {
+      var token = TokenService.getToken();
+      return token ? JSON.parse(atob(token.split('.')[1])).user : null;
+    }
   }
 
 

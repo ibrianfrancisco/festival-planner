@@ -13,7 +13,11 @@ var userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  festival: [{type: Schema.Types.ObjectId, ref:"Festival"}]
+  password: {
+    type: String,
+    required: true
+  },
+  festival: [{type: mongoose.Schema.Types.ObjectId, ref:"Festival"}]
 });
 
 userSchema.pre('save', function(next) {
