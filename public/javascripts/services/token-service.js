@@ -22,6 +22,7 @@
       if (token) {
         // check if expired, remove if it is
         var payload = JSON.parse(atob(token.split('.')[1]));
+        // console.log(payload);
         if (payload.exp < Date.now() / 1000) {
           localStorage.removeItem('token');
           token = null;
