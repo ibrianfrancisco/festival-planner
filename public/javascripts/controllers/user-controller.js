@@ -27,10 +27,11 @@
 
     vm.createFestival = function() {
       console.log('Clicking this will add a festival to the logged in users array');
+      $state.go('festival');
     }
 
-    $('#festival-button').on("mouseenter focus mouseleave", function() {
-      $(this).children("span").toggleClass('glyphicon-pencil');
+    $('#festival-button').hover(
+      function(){$(this).children("span").toggleClass('glyphicon-pencil');
     });
 
   }
