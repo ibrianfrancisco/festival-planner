@@ -11,7 +11,7 @@
     var vm = this;
 
 
-
+    vm.test = moment();
 
   }
 
