@@ -20,6 +20,14 @@ var userSchema = new mongoose.Schema({
   festival: [{type: mongoose.Schema.Types.ObjectId, ref:"Festival"}]
 });
 
+userSchema.set('toJSON', {
+  transform: function(doc, ret) {
+    // remove the password property when serializing doc to JSON
+    delete ret.password;
+    return ret;
+  }
+});
+
 userSchema.pre('save', function(next) {
   var user = this;
   // if password has not been modifed is what this is saying, call next.
