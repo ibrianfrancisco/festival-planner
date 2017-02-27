@@ -63,6 +63,12 @@
         loginRequired: true
       })
 
+      .state('settings', {
+        url: '/settings',
+        templateUrl: 'templates/users/settings.html',
+        loginRequired: true
+      })
+
       .state('festival', {
         url: '/festival',
         templateUrl: 'templates/festivals/festival.html',
