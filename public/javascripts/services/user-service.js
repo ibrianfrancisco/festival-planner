@@ -15,7 +15,8 @@
       logout,
       signup,
       getUser,
-      isLoggedIn
+      isLoggedIn,
+      removeUser
     };
 
     // get logged in user if already exists in server session
@@ -41,6 +42,23 @@
 
     function isLoggedIn() {
       return !!getUserFromToken();
+    }
+
+    function removeUser(roleid, userid) {
+      return $http.delete('/users/' + roleid, {params: {userId: userID}})
+      .then(function(response) {
+        console.log(response.data);
+      })
+        // How james deleted an artist back then
+      // delete: function(id, callback) {
+      //   $http({
+      //     url: 'https://agile-chamber-77499.herokuapp.com/artists/' + id,
+      //     method: 'DELETE'
+      //   }).success(function(response) {
+      //     callback(response);
+      //   }).error(function(error) {
+      //     callback(error);
+      //   })
     }
 
     return service;
