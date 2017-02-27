@@ -24,9 +24,9 @@
 
     $stateProvider
 
-      .state('home', {
-        url: '/home',
-        templateUrl: 'templates/home.html'
+      .state('welcome', {
+        url: '/welcome',
+        templateUrl: 'templates/welcome.html'
       })
 
       .state('login', {
@@ -41,7 +41,13 @@
         controller: 'UserController as userCtrl'
       })
 
-    $urlRouterProvider.otherwise('/home');
+      .state('homepage', {
+        url: '/home',
+        templateUrl: 'templates/users/homepage.html',
+        controller: 'UserController as userCtrl',
+        loginRequired: true
+      })
+    $urlRouterProvider.otherwise('/welcome');
   }
 
 

@@ -11,16 +11,16 @@
 
     vm.signup = function() {
       UserService.signup(vm.user).then(function() {
-        $state.go('home');
+        $state.go('homepage');
       });
       vm.user = {};
     };
 
     vm.login = function() {
       UserService.login(vm.user).then(function() {
-        $state.go('home');
+        $state.go('homepage');
       }, function() {
-        $state.go('home');
+        $state.go('homepage');
       });
       vm.user = {};
     };
