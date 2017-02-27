@@ -1,14 +1,63 @@
-/*nav {
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+nav {
   padding-top: 5px;
   background-color: transparent;
   box-shadow: none;
-}*/
+}
 
 /*.nav>li {
     position: relative;
     display: block
 }
 */
+
+body {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 70px;
+}
+
+#main-wrapper {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  left: 0px;
+  top: -14px;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 9990;
+  opacity: .8;
+  background-image: url(/images/homeBG.jpg);
+}
+
+.main-header-box {
+  width: 800px;
+  height: 170px;
+  padding: 20px;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+
+  margin: -70px 0 0 -400px;
+}
+
+.secondary-wrapper {
+  width: 100%;
+  height: 230px;
+  text-align: center;
+}
+
+header.header-text {
+  font-size: 40px;
+}
+
+.header-text {
+  color: #fff;
+}
+
 .logo {
   width: 100px;
   padding-left: 20px;
