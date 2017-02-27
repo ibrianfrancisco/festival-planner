@@ -6,8 +6,12 @@ body {
   padding-top: 70px;
 }
 
-header.header-text {
-  font-size: 40px;
+header {
+  font-size: 48px;
+}
+
+a {
+  cursor: pointer;
 }
 
 #main-wrapper {
