@@ -25,6 +25,9 @@
       vm.user = {};
     };
 
+    vm.createFestival = function() {
+      console.log('Clicking this will add a festival to the logged in users array');
+    }
   }
 
 })();

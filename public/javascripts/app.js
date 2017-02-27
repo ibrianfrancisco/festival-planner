@@ -39,8 +39,7 @@
 
       .state('welcome', {
         url: '/welcome',
-        templateUrl: 'templates/welcome.html',
-        loggedIn: true
+        templateUrl: 'templates/welcome.html'
       })
 
       .state('login', {
@@ -63,6 +62,14 @@
         controller: 'UserController as userCtrl',
         loginRequired: true
       })
+
+      .state('festival', {
+        url: '/festival',
+        templateUrl: 'templates/festivals/festival.html',
+        controller: 'FestivalController as festCtrl',
+        loginRequired: true
+      })
+
     $urlRouterProvider.otherwise('/welcome');
   }
 
