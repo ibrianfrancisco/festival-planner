@@ -20,7 +20,7 @@
       UserService.login(vm.user).then(function() {
         $state.go('homepage');
       }, function() {
-        $state.go('homepage');
+        $state.go('login');
       });
       vm.user = {};
     };
