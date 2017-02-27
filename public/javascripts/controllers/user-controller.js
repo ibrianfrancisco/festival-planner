@@ -28,6 +28,13 @@
     vm.createFestival = function() {
       console.log('Clicking this will add a festival to the logged in users array');
     }
+
+    $('#festival-button').on("mouseenter focus mouseleave", function() {
+      $(this).children("span").toggleClass('glyphicon-pencil');
+    });
+
   }
+
+
 
 })();
