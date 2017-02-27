@@ -11,7 +11,7 @@
 
     vm.logout = function() {
       UserService.logout();
-      $state.go('home');
+      $state.go('welcome');
     };
 
     vm.getUser = UserService.getUser;

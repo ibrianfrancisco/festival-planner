@@ -3,7 +3,8 @@
 
   angular.module('app', ['ui.router', 'ngAnimate', 'ngResource'])
     .config(configRoutes)
-    .run(runBlock);
+    .run(runBlock)
+    .run(loginBlock);
 
     runBlock.$inject = ['$rootScope', '$state', 'UserService'];
 
@@ -16,6 +17,18 @@
       });
     }
 
+    loginBlock.$inject = ['$rootScope', '$state', 'UserService'];
+
+
+    function loginBlock($rootScope, $state, UserService) {
+      $rootScope.$on('$stateChangeStart', function(evt, toState) {
+        if(toState.loggedIn && UserService.isLoggedIn()) {
+          evt.preventDefault();
+          $state.go('homepage');
+        }
+      });
+    }
+
   configRoutes.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
   function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -24,24 +37,40 @@
 
     $stateProvider
 
-      .state('home', {
-        url: '/home',
-        templateUrl: 'templates/home.html'
+      .state('welcome', {
+        url: '/welcome',
+        templateUrl: 'templates/welcome.html'
       })
 
       .state('login', {
         url: '/login',
         templateUrl: 'templates/users/login.html',
-        controller: 'UserController as userCtrl'
+        controller: 'UserController as userCtrl',
+        loggedIn: true
       })
 
       .state('signup', {
         url: '/signup',
         templateUrl: 'templates/users/signup.html',
-        controller: 'UserController as userCtrl'
+        controller: 'UserController as userCtrl',
+        loggedIn: true
       })
 
-    $urlRouterProvider.otherwise('/home');
+      .state('homepage', {
+        url: '/home',
+        templateUrl: 'templates/users/homepage.html',
+        controller: 'UserController as userCtrl',
+        loginRequired: true
+      })
+
+      .state('festival', {
+        url: '/festival',
+        templateUrl: 'templates/festivals/festival.html',
+        controller: 'FestivalController as festCtrl',
+        loginRequired: true
+      })
+
+    $urlRouterProvider.otherwise('/welcome');
   }
 
 
