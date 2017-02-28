@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var userCtrl = require('../controllers/users');
+var festCtrl = require('../controllers/festivals');
 
 // Public routes (no auth required)
 router.post('/users/login', userCtrl.login);
@@ -15,8 +16,8 @@ router.use(function(req, res, next) {
 });
 
 // Protected routes (authentication required)
-// router.get('/todos', todoCtrl.getAllTodos);
-// router.post('/todos', todoCtrl.createTodo);
-// router.delete('/todos/:id', todoCtrl.deleteTodo);
+router.get('/festivals', festCtrl.getAllFestivals);
+router.post('/festivals', festCtrl.createFestival);
+router.delete('/festivals/:id', festCtrl.deleteFestival);
 
 module.exports = router;

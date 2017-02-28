@@ -1,1 +1,113 @@
-<h1>create a festival</h1>
+<h1 class="text-center">Festival Name Goes Here | <span><b>Date</b></span></h1>
+
+<div class="container">
+  <span>12:00</span><span class="pull-right">12:00</span>
+  <!-- Entire stage timeline -->
+
+  <div class="stage-row row">
+    <!-- Each Hour -->
+    <div class="hour-box col-xs-1" name="mrker1_12">
+      <div class="row">
+      <!-- Every 5 minutes -->
+        <div class="five-minute-box col-xs-7" style="padding-left: 0px; padding-right: 0px;" marker="1_7">
+        <p class="artist-text text-center">Artist</p>
+        </div>
+        <div class="five-minute-box col-xs-3" style="padding-left: 0px; padding-right: 0px;" marker="7_10">
+        </div>
+        <div class="five-minute-box col-xs-2" style="padding-left: 0px; padding-right: 0px;" marker="11_12">
+        </div>
+      </div>
+    </div>
+
+    <div class="hour-box col-xs-1" name="mrker13_24">
+      <div class="row">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+
+<div class="container">
+  <div class="stage-row row">
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="stage-row row">
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="stage-row row">
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="stage-row row">
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="stage-row row">
+  </div>
+</div>
+
+<br>
+
+
+<form ng-submit="festCtrl.createFestival()" class="col-md-12">
+  <br>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input ng-model="festCtrl.name" id="name" type="text" required>
+  </div>
+<!--
+  <div class="form-group">
+    <label for="startTime">startTime</label>
+    <input ng-model="festCtrl.startTime" id="endTime" type="date" required>
+  </div>
+
+  <div class="form-group">
+    <label for="endTime">endTime</label>
+    <input ng-model="festCtrl.endTime" id="srtTime" type="date" required>
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Start Date</label>
+    <input ng-model="festCtrl.startDate" id="datee" type="date" required>
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">endDate</label>
+    <input ng-model="festCtrl.endDate" id="dateee" type="date" required>
+  </div> -->
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input ng-model="festCtrl.title" id="title" type="text" required>
+  </div>
+
+  <div class="form-group">
+    <label for="stageName">stageName</label>
+    <input ng-model="festCtrl.festival.stageName" id="title" type="text" required>
+  </div>
+
+  <br>
+  <button class="btn btn-primary" type="submit" name="action">Sign In</button>
+</form>
+
+
+<div class="container">
+  <button class="btn btn-primary pull-right">Save</button>
+</div>
