@@ -17,7 +17,7 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  festival: [{type: mongoose.Schema.Types.ObjectId, ref:"Festival"}]
+  festivals: [{type: mongoose.Schema.Types.ObjectId, ref:"Festival"}]
 });
 
 userSchema.set('toJSON', {
@@ -48,5 +48,6 @@ userSchema.methods.comparePassword = function(tryPassword, cb) {
     cb(null, isMatch);
   })
 }
+
 
 module.exports = mongoose.model('User', userSchema);

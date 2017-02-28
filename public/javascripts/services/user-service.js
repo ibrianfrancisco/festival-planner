@@ -45,17 +45,17 @@
     }
 
     function removeUser() {
-      // return $resource('/api/users/:id', {id: '@_id'});
-      return $resource('users', {}, {
-        update: {
-          method: 'PUT'
-        },
-        remove: {
-          method: 'DELETE',
-          url: '/api/users/:id',
-          params: {id: '@_id'}
-        }
-      });
+      return $resource('/api/users/:id', {id: '@_id'});
+      // return $resource('users', {}, {
+      //   update: {
+      //     method: 'PUT'
+      //   },
+      //   remove: {
+      //     method: 'DELETE',
+      //     url: '/api/users/:id',
+      //     params: {id: '@_id'}
+      //   }
+      // });
     }
 
     return service;

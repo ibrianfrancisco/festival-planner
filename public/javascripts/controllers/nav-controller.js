@@ -20,11 +20,10 @@
     vm.deleteUser = function (user) {
       var alert = confirm(`You're about to delete you account, are you sure?`);
       if (alert == true) {
-        // user.$delete(function() {
-          console.log('deleteUser');
-        // })
-      } else {
-        return
+        user.$delete(function() {
+          console.log('hello');
+          console.log(user);
+        })
       }
     }
 
