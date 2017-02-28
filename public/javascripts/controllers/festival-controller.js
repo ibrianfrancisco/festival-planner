@@ -17,11 +17,15 @@
     }
 
     vm.deleteFestival = function (festival) {
-      console.log('clicked');
-      festival.$delete(function() {
-        $scope.festivals.splice($scope.festivals.findIndex(t => t._id), 1);
-      });
-    };
+      var alert = confirm(`You're about to delete this festival, are you sure?`);
+      if (alert == true) {
+        festival.$delete(function() {
+          $scope.festivals.splice($scope.festivals.findIndex(t => t._id), 1);
+        });
+      } else {
+        return
+      }
+    }
 
     vm.createFestival = function(title, stageName, startDate, endDate, artistName, startTime, endTime) {
       FestivalService.save({

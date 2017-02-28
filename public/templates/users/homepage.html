@@ -3,17 +3,14 @@
   <div class="margin-zero">
     <div class="row">
     <!-- make each festival a card -->
-<!--       <div id="card" class="card medium col-xs-2" ng-repeat="festival in festivals track by $index">
-        <h5>{{festival.gameName}}</h5>
-        <p>{{festival.system}}</p>
-        <p>{{festival.lang}}</p>
-        <p>{{festival.desc}}</p>
-        <p>{{festival.playTime}}</p>
-        <p>Microphone required | {{festival.micReq ? 'Yes' : 'No'}}</p>
-        <p>{{festival.gamerId}}</p>
-        <a ng-show="festCtrl.isLoggedIn()" ng-click="festCtrl.delete(festival)" class="secondary-content"><i class="material-icons">delete</i></a>
+      <div id="card" class="card medium col-xs-2" ng-repeat="festival in festivals track by $index">
+        <h5>{{festival.title}}</h5>
+        <p>{{festival.id}}</p>
+        <p>{{festival._id}}</p>
+        <p>{{festival.date}}</p>
+        <button ng-click="festCtrl.deleteFestival(festival)" class="btn btn-danger btn-xs">Delete</button>
       </div>
- -->
+
     </div>
   </div>
 </div>
