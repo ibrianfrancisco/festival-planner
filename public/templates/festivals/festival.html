@@ -1,60 +1,72 @@
 <h1 class="text-center">Festival Title Goes Here | <span><b>Date of Event</b></span></h1>
 
 <div class="container">
-  <span>Event Start Time</span><span class="pull-right">Event End Time</span>
   <!-- Entire stage timeline -->
-
-<!--   <div class="stageContainer">
-    <div class="stageNameWrap">
-      <p class="stageName">Coachella</p>
-    </div>
-  </div> -->
   <div class="row">
-  <div class="col-md-10">
-  <!-- left side bar for stage names -->
-    <div class="row">
-    <div class="col-md-1">
-    <p style="top: 20px; right:10px; position: absolute;">Coachella</p>
-    </div>
-
-
-
-    <div class="stage-row col-md-11">
-      <!-- Each Hour -->
-      <div class="hour-box col-xs-1" name="mrker1_12">
-        <div class="row">
-        <!-- Every 5 minutes -->
-          <div class="five-minute-box col-xs-7" style="padding-left: 0px; padding-right: 0px;" marker="1_7">
-          <p class="artist-text text-center">Artist</p>
-          </div>
-          <div class="five-minute-box col-xs-3" style="padding-left: 0px; padding-right: 0px;" marker="7_10">
-          </div>
-          <div class="five-minute-box col-xs-2" style="padding-left: 0px; padding-right: 0px;" marker="11_12">
+    <div class="col-xs-10">
+      <!-- left side bar for stage names -->
+      <div class="row">
+        <div class="col-xs-1">
+          <p style="top: 40px; right:10px; position: relative;">Coachella</p>
+        </div>
+        <span style="position:relative; right: 50px;">Event Start Time</span>
+        <span style="position:relative; right: 35px;" class="pull-right">Event End Time</span>
+        <div class="stage-row col-xs-10">
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <!-- Each Hour -->
+            <div class="row">
+            <!-- Every 5 minutes -->
+              <div class="five-minute-box col-xs-7" style="padding-left: 0px; padding-right: 0px;" marker="1_7">
+              <p class="artist-text text-center">Artist</p>
+              </div>
+              <div class="five-minute-box col-xs-3" style="padding-left: 0px; padding-right: 0px;" marker="7_10">
+              </div>
+              <div class="five-minute-box col-xs-2" style="padding-left: 0px; padding-right: 0px;" marker="11_12">
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="col-xs-1">
+          <button  style="top: 13px; position: relative;" class="btn btn-danger"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+        </div>
+
       </div>
-    </div>
-  </div>
 
 <!--     <div class="hour-box col-xs-1" name="mrker13_24">
       <div class="row">
       </div>
     </div> -->
 
+    </div>
+
+
+
+
+    <!-- Right sidebar -->
+    <div class="col-xs-2">
+      <p class="text-center">Inputs go here</p>
+        <form ng-submit="festCtrl.createFestival()" class="col-md-12">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input ng-model="festCtrl.title" id="title" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="stageName">stageName</label>
+            <input ng-model="festCtrl.festival.stageName" id="title" type="text" required>
+          </div>
+          <br>
+          <div class="text-center">
+            <button class="btn btn-primary" type="submit" name="action">Save Festival</button>
+          </div>
+        </form>
+    </div>
+
+
+
+
   </div>
-
-
-
-
-<!-- Right sidebar -->
-  <div class="col-md-2">
-  <p class="text-center">Controls go here</p>
-  </div>
-
-
-
-
-</div>
 
 
 <!-- <div class="stageContainer">
@@ -66,12 +78,12 @@
 
 
 
-<form ng-submit="festCtrl.createFestival()" class="col-md-12">
+<!-- <form ng-submit="festCtrl.createFestival()" class="col-md-12">
   <br>
   <div class="form-group">
     <label for="name">Name</label>
     <input ng-model="festCtrl.name" id="name" type="text" required>
-  </div>
+  </div> -->
 <!--
   <div class="form-group">
     <label for="startTime">startTime</label>
@@ -93,7 +105,7 @@
     <input ng-model="festCtrl.endDate" id="dateee" type="date" required>
   </div> -->
 
-  <div class="form-group">
+<!--   <div class="form-group">
     <label for="title">Title</label>
     <input ng-model="festCtrl.title" id="title" type="text" required>
   </div>
@@ -101,10 +113,11 @@
   <div class="form-group">
     <label for="stageName">stageName</label>
     <input ng-model="festCtrl.festival.stageName" id="title" type="text" required>
-  </div>
+  </div> -->
 
-  <br>
+<!--   <br>
   <div class="container">
     <button class="btn btn-primary pull-right" type="submit" name="action">Save Festival</button>
   </div>
-</form>
+</form> -->
+</div>

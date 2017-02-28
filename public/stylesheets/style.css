@@ -140,25 +140,6 @@ a {
   margin: 0 auto;
 }
 
-/*.stageContainer {
-  height: 4.267%;
-}
-
-.stageName  {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-}
-
-.stageNameWrap {
-  display: table;
-  height: 100%;
-  width: 4%;
-  overflow: hidden;
-}*/
-
-
-
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
