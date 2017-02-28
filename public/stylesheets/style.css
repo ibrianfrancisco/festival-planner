@@ -14,6 +14,33 @@ a {
   cursor: pointer;
 }
 
+.stage-row {
+  border: 1px solid black;
+  width: 100%;
+  height: 60px;
+/*  padding-left: 0px;
+  padding-right: 0px;*/
+  margin-left: -3px;
+}
+
+.hour-box {
+  border: 2px solid red;
+  height: 60px;
+/*  padding-left: 0px;
+  padding-right: 0px;
+*/}
+
+.five-minute-box {
+  border: 2px dashed blue;
+  height: 60px;
+/*  padding-left: 0px;
+  padding-right: 0px;
+*/}
+
+.artist-text {
+  font-size: 10px;
+}
+
 #festival-button {
   margin-bottom: 20px;
   height: 50px;
@@ -73,6 +100,10 @@ a {
   color: black;
   vertical-align: top;
   padding-right: 5px;
+}
+
+.margin-zero {
+  margin: 0 auto;
 }
 
 [ui-view].ng-enter {

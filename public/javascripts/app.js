@@ -59,7 +59,7 @@
       .state('homepage', {
         url: '/home',
         templateUrl: 'templates/users/homepage.html',
-        controller: 'UserController as userCtrl',
+        controller: 'FestivalController as festCtrl',
         loginRequired: true
       })
 
