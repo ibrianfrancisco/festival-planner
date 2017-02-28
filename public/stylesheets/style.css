@@ -102,6 +102,10 @@ a {
   padding-right: 5px;
 }
 
+.margin-zero {
+  margin: 0 auto;
+}
+
 [ui-view].ng-enter {
   transition: opacity 0.8s;
   opacity: 0;

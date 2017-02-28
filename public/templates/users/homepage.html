@@ -1,7 +1,27 @@
+<div class="container-fluid">
+  <h1 class="text-center">All Festivals</h1>
+  <div class="margin-zero">
+    <div class="row">
+    <!-- make each festival a card -->
+<!--       <div id="card" class="card medium col-xs-2" ng-repeat="festival in festivals track by $index">
+        <h5>{{festival.gameName}}</h5>
+        <p>{{festival.system}}</p>
+        <p>{{festival.lang}}</p>
+        <p>{{festival.desc}}</p>
+        <p>{{festival.playTime}}</p>
+        <p>Microphone required | {{festival.micReq ? 'Yes' : 'No'}}</p>
+        <p>{{festival.gamerId}}</p>
+        <a ng-show="festCtrl.isLoggedIn()" ng-click="festCtrl.delete(festival)" class="secondary-content"><i class="material-icons">delete</i></a>
+      </div>
+ -->
+    </div>
+  </div>
+</div>
+
 <div class="container navbar-fixed-bottom">
   <footer>
     <div class="pull-right">
-      <button id="festival-button" class="btn btn-danger" ng-click="userCtrl.createFestival()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+      <button id="festival-button" class="btn btn-danger" ng-click="festCtrl.goToFestival()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
     </div>
   </footer>
 </div>
