@@ -1,6 +1,7 @@
 var Festival = require('../models/festival');
 // not necessary?
 var ObjectId = require('mongoose').Schema.Types.ObjectId;
+var User = require('../models/user');
 
 module.exports = {
   getAllFestivals,
@@ -18,13 +19,19 @@ function getAllFestivals(req, res, next) {
 
 function createFestival(req, res, next) {
   console.log('create triggered');
-  // req.body.user = req.user._id;
-  Festival.create(req.body).then(newFestival => {
-    req.user.festivals.push(newFestival._id);
-    // not saving to user
-    console.log(req.user);
-    res.status(201).json(newFestival);
-  }).catch(err => res.status(400).json(err));
+  var user = User.findById(req.user._id, function(err, user) {
+    Festival.create(req.body).then(newFestival => {
+      user.festivals.push(newFestival._id);
+      user.save(function(err) {
+        if (err) {
+          res.json('error')
+        } else {
+          res.status(201).json(newFestival);
+        }
+      })
+    }).catch(err => res.status(400).json(err));
+
+  });
 }
 
 function deleteFestival(req, res, next) {
