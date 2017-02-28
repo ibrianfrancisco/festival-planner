@@ -10,18 +10,17 @@ module.exports = {
 }
 
 function getAllFestivals(req, res, next) {
-  console.log('Get All Triggered');
   Festival.find({user: req.user._id}).exec().then(festivals => {
     res.json(festivals);
-    // console.log(festivals)
   }).catch(err => res.status(500).json(err));
 }
 
 function createFestival(req, res, next) {
-  console.log('create triggered');
   var user = User.findById(req.user._id, function(err, user) {
     Festival.create(req.body).then(newFestival => {
       user.festivals.push(newFestival._id);
+      newFestival.user = user._id;
+      newFestival.save();
       user.save(function(err) {
         if (err) {
           res.json('error')
@@ -30,7 +29,6 @@ function createFestival(req, res, next) {
         }
       })
     }).catch(err => res.status(400).json(err));
-
   });
 }
 
