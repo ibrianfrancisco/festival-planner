@@ -9,8 +9,8 @@ var artistSchema = new mongoose.Schema({
 var dateSchema = new mongoose.Schema({
   stageName: String,
   stageArtist: [artistSchema],
-  startDate: Date,
-  endDate: Date,
+  evtStartTime: Date,
+  evtEndTime: Date,
 })
 
 var festivalSchema = new mongoose.Schema({
