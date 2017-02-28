@@ -1,22 +1,26 @@
+<div class="recently-added">
+  <br>
+  <h1 class="white-text text-center">Recently Added</h1>
+  <div class="white-text put-something-here"><p>Put Cards Here That Users can Copy over</p></div>
+</div>
+<h1 class="text-center">All Festivals</h1>
+
 <div class="container-fluid">
-  <h1 class="text-center">All Festivals</h1>
-  <div class="margin-zero">
-    <div class="row">
-    <!-- make each festival a card -->
-<!--       <div id="card" class="card medium col-xs-2" ng-repeat="festival in festivals track by $index">
-        <h5>{{festival.gameName}}</h5>
-        <p>{{festival.system}}</p>
-        <p>{{festival.lang}}</p>
-        <p>{{festival.desc}}</p>
-        <p>{{festival.playTime}}</p>
-        <p>Microphone required | {{festival.micReq ? 'Yes' : 'No'}}</p>
-        <p>{{festival.gamerId}}</p>
-        <a ng-show="festCtrl.isLoggedIn()" ng-click="festCtrl.delete(festival)" class="secondary-content"><i class="material-icons">delete</i></a>
+  <div class="row">
+    <div class="col-xs-6 col-md-4" ng-repeat="festival in festivals track by $index">
+      <div class="thumbnail">
+        <img src="/images/homeBG.jpg" alt="Festival Imgs">
+        <div class="caption">
+          <span ng-click="festCtrl.deleteFestival(festival)" class="btn btn-danger btn-xs pull-right">Delete</span>
+          <h3>{{festival.title}}</h3>
+          <p>{{festival._id}}</p>
+        </div>
       </div>
- -->
     </div>
   </div>
 </div>
+
+
 
 <div class="container navbar-fixed-bottom">
   <footer>
