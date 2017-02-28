@@ -1,69 +1,69 @@
-<h1 class="text-center">Festival Name Goes Here | <span><b>Date</b></span></h1>
+<h1 class="text-center">Festival Title Goes Here | <span><b>Date of Event</b></span></h1>
 
 <div class="container">
-  <span>12:00</span><span class="pull-right">12:00</span>
+  <span>Event Start Time</span><span class="pull-right">Event End Time</span>
   <!-- Entire stage timeline -->
 
-  <div class="stage-row row">
-    <!-- Each Hour -->
-    <div class="hour-box col-xs-1" name="mrker1_12">
-      <div class="row">
-      <!-- Every 5 minutes -->
-        <div class="five-minute-box col-xs-7" style="padding-left: 0px; padding-right: 0px;" marker="1_7">
-        <p class="artist-text text-center">Artist</p>
-        </div>
-        <div class="five-minute-box col-xs-3" style="padding-left: 0px; padding-right: 0px;" marker="7_10">
-        </div>
-        <div class="five-minute-box col-xs-2" style="padding-left: 0px; padding-right: 0px;" marker="11_12">
+<!--   <div class="stageContainer">
+    <div class="stageNameWrap">
+      <p class="stageName">Coachella</p>
+    </div>
+  </div> -->
+  <div class="row">
+  <div class="col-md-10">
+  <!-- left side bar for stage names -->
+    <div class="row">
+    <div class="col-md-1">
+    <p style="top: 20px; right:10px; position: absolute;">Coachella</p>
+    </div>
+
+
+
+    <div class="stage-row col-md-11">
+      <!-- Each Hour -->
+      <div class="hour-box col-xs-1" name="mrker1_12">
+        <div class="row">
+        <!-- Every 5 minutes -->
+          <div class="five-minute-box col-xs-7" style="padding-left: 0px; padding-right: 0px;" marker="1_7">
+          <p class="artist-text text-center">Artist</p>
+          </div>
+          <div class="five-minute-box col-xs-3" style="padding-left: 0px; padding-right: 0px;" marker="7_10">
+          </div>
+          <div class="five-minute-box col-xs-2" style="padding-left: 0px; padding-right: 0px;" marker="11_12">
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="hour-box col-xs-1" name="mrker13_24">
+<!--     <div class="hour-box col-xs-1" name="mrker13_24">
       <div class="row">
       </div>
-    </div>
+    </div> -->
 
   </div>
 
+
+
+
+<!-- Right sidebar -->
+  <div class="col-md-2">
+  <p class="text-center">Controls go here</p>
+  </div>
+
+
+
+
 </div>
 
-<br>
 
-<div class="container">
-  <div class="stage-row row">
+<!-- <div class="stageContainer">
+  <div class="stageNameWrap">
+    <p class="stageName">Coachella</p>
   </div>
 </div>
+ -->
 
-<br>
-
-<div class="container">
-  <div class="stage-row row">
-  </div>
-</div>
-
-<br>
-
-<div class="container">
-  <div class="stage-row row">
-  </div>
-</div>
-
-<br>
-
-<div class="container">
-  <div class="stage-row row">
-  </div>
-</div>
-
-<br>
-
-<div class="container">
-  <div class="stage-row row">
-  </div>
-</div>
-
-<br>
 
 
 <form ng-submit="festCtrl.createFestival()" class="col-md-12">
@@ -104,10 +104,7 @@
   </div>
 
   <br>
-  <button class="btn btn-primary" type="submit" name="action">Sign In</button>
+  <div class="container">
+    <button class="btn btn-primary pull-right" type="submit" name="action">Save Festival</button>
+  </div>
 </form>
-
-
-<div class="container">
-  <button class="btn btn-primary pull-right">Save</button>
-</div>
