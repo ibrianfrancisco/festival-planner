@@ -14,6 +14,16 @@ a {
   cursor: pointer;
 }
 
+.recently-added {
+  background-color: rgb(66,66,73);
+  position: relative;
+  bottom: 39px;
+}
+
+.white-text {
+  color: #fff;
+}
+
 .stage-row {
   border: 1px solid black;
   width: 100%;
@@ -123,6 +133,12 @@ a {
   opacity: 0;
 }
 
+.put-something-here {
+  width: 700px;
+  text-align: center;
+  height: 200px;
+  margin: 0 auto;
+}
 
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,
