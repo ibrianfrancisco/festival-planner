@@ -5,11 +5,20 @@ var SECRET = process.env.SECRET;
 // refactor the token thing by including auth from config
 
 module.exports = {
+  deleteUser,
   create,
   login,
   logout,
   me
 };
+
+function deleteUser(req, res, next) {
+  User.findByIdAndRemove(req.params.id)
+  .then(user => {
+    res.json(user);
+    console.log('deleted USER!')
+  }).catch(err => res.status(400).json(err));
+}
 
 function create(req, res, next) {
   User.create(req.body).then(user => {

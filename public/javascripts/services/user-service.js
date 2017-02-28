@@ -4,9 +4,9 @@
   angular.module('app')
     .factory('UserService', userService);
 
-  userService.$inject = ['$http', 'TokenService'];
+  userService.$inject = ['$http', 'TokenService', '$resource'];
 
-  function userService($http, TokenService) {
+  function userService($http, TokenService, $resource) {
 
     var user = null;
 
@@ -44,21 +44,18 @@
       return !!getUserFromToken();
     }
 
-    function removeUser(roleid, userid) {
-      return $http.delete('/users/' + roleid, {params: {userId: userID}})
-      .then(function(response) {
-        console.log(response.data);
-      })
-        // How james deleted an artist back then
-      // delete: function(id, callback) {
-      //   $http({
-      //     url: 'https://agile-chamber-77499.herokuapp.com/artists/' + id,
-      //     method: 'DELETE'
-      //   }).success(function(response) {
-      //     callback(response);
-      //   }).error(function(error) {
-      //     callback(error);
-      //   })
+    function removeUser() {
+      // return $resource('/api/users/:id', {id: '@_id'});
+      return $resource('users', {}, {
+        update: {
+          method: 'PUT'
+        },
+        remove: {
+          method: 'DELETE',
+          url: '/api/users/:id',
+          params: {id: '@_id'}
+        }
+      });
     }
 
     return service;
@@ -73,3 +70,15 @@
 
 
 })();
+
+
+// function removeUser(id, cb) {
+//   $http({
+//     url: '/users/' + id,
+//     method: 'DELETE'
+//   }).success(function(response) {
+//     cb(response);
+//   }).error(function(error) {
+//     cb(error);
+//   });
+// }

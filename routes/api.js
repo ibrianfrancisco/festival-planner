@@ -16,6 +16,7 @@ router.use(function(req, res, next) {
 });
 
 // Protected routes (authentication required)
+router.delete('/users/:id', userCtrl.deleteUser);
 router.get('/festivals', festCtrl.getAllFestivals);
 router.post('/festivals', festCtrl.createFestival);
 router.delete('/festivals/:id', festCtrl.deleteFestival);
