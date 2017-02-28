@@ -18,8 +18,11 @@ function getAllFestivals(req, res, next) {
 
 function createFestival(req, res, next) {
   console.log('create triggered');
-  req.body.user = req.user._id;
+  // req.body.user = req.user._id;
   Festival.create(req.body).then(newFestival => {
+    req.user.festivals.push(newFestival._id);
+    // not saving to user
+    console.log(req.user);
     res.status(201).json(newFestival);
   }).catch(err => res.status(400).json(err));
 }
