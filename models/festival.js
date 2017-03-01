@@ -1,21 +1,22 @@
 var mongoose = require('mongoose');
 
 var artistSchema = new mongoose.Schema({
-  name: String,
-  startTime: Date,
-  endTime: Date
+  artistName: String,
+  actStartTime: Date,
+  actEndTime: Date
 });
 
-var dateSchema = new mongoose.Schema({
+var stageSchema = new mongoose.Schema({
   stageName: String,
   stageArtist: [artistSchema],
-  evtStartTime: Date,
-  evtEndTime: Date,
+  stageStartTime: Date,
+  stageEndTime: Date,
 })
 
 var festivalSchema = new mongoose.Schema({
   title: String,
-  date: [dateSchema],
+  date: Date,
+  stage: [stageSchema],
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
