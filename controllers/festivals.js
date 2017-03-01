@@ -17,7 +17,29 @@ function getAllFestivals(req, res, next) {
 
 function createFestival(req, res, next) {
   var user = User.findById(req.user._id, function(err, user) {
-    Festival.create(req.body).then(newFestival => {
+    // Festival.create(req.body).then(newFestival => {
+    //   user.festivals.push(newFestival._id);
+    //   newFestival.user = user._id;
+    //   newFestival.save();
+    //   user.save(function(err) {
+    //     if (err) {
+    //       res.json('error')
+    //     } else {
+    //       res.status(201).json(newFestival);
+    //     }
+    //   })
+    // }).catch(err => res.status(400).json(err));
+
+    Festival.create({
+      title: req.body.title,
+      date: req.body.date,
+      stageName: req.body.stageName,
+      startTime: req.body.stageStartTime,
+      endTime: req.body.stageEndTime,
+      artistName: req.body.artistName,
+      stageStartTime: req.body.actStartTime,
+      stageEndTime: req.body.actEndTime
+    }).then(newFestival => {
       user.festivals.push(newFestival._id);
       newFestival.user = user._id;
       newFestival.save();
@@ -27,8 +49,8 @@ function createFestival(req, res, next) {
         } else {
           res.status(201).json(newFestival);
         }
-      })
-    }).catch(err => res.status(400).json(err));
+      }).catch(err => res.status(400).json(err));
+    });
   });
 }
 
