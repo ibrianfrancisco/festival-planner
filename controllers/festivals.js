@@ -6,7 +6,9 @@ var User = require('../models/user');
 module.exports = {
   getAllFestivals,
   createFestival,
-  deleteFestival
+  deleteFestival,
+  addStage,
+  addAct
 }
 
 function getAllFestivals(req, res, next) {
@@ -59,4 +61,53 @@ function deleteFestival(req, res, next) {
   .then(deletedFest => {
     res.json(deletedFest);
   }).catch(err => res.status(400).json(err));
+}
+
+function addStage(req, res, next) {
+  // MARKER 1 - the req.params.id comes from the other MARKER 1 located in routes/api.js
+  Festival.findById(req.params.id)
+  .then(festival => {
+    festival.stages.push({
+      // MARKER 2 - stageName is TRANSFERED TO the festival instance's stageName - req.body.stageName comes from festival-controller
+      stageName: req.body.stageName
+    });
+    return festival.save();
+  })
+  .then(festival => {
+    res.status(200).json(festival);
+  });
+}
+
+/*  TO DELETE A SUB-DOCUMENT
+
+festival.stages.remove(id)
+where id is the id of the stage
+
+then
+festival.save()
+
+
+festival.stages.id(stageId).acts.remove(actId)
+
+
+*/
+
+function addAct(req, res, next) {
+  // assumes route of POST /api/stages/:id/acts
+  // this findOne method will find a festival model's stage _id, then it will take that festival stage's _id
+  //and push it into it's own acts array determing by what you want to put in it
+  // THEN save that festival, and return it then do all that status stuff
+  Festival.findOne({'stages._id': req.params.id})
+  .then(festival => {
+    festival.stages.id(req.params.id).acts.push({
+      artistName: req.body.artistName,
+      // So this whole new Date thing, when a user input the data from the input form or whatever, it'll save it to mlab as whatever it is.
+      actStartTime: new Date(req.body.actStartTime),
+      actEndTime: new Date(req.body.actEndTime)
+    });
+    return festival.save();
+  })
+  .then(festival => {
+    res.status(200).json(festival);
+  });
 }

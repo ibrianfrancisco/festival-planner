@@ -19,5 +19,8 @@ router.use(function(req, res, next) {
 router.get('/festivals', festCtrl.getAllFestivals);
 router.post('/festivals', festCtrl.createFestival);
 router.delete('/festivals/:id', festCtrl.deleteFestival);
+// MARKER 1 - this :id comes from controllers/festivals.js
+router.post('/festivals/:id/stages', festCtrl.addStage);
+router.post('/festivals/:id/acts', festCtrl.addAct);
 
 module.exports = router;

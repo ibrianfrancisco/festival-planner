@@ -13,6 +13,14 @@
 <br>
 
 <div class="container">
+
+
+
+<input type="text" ng-model="festCtrl.newStageName">
+<button ng-click="festCtrl.addStage()">add stage</button>
+
+
+
   <!-- Entire stage timeline -->
   <div class="row">
     <div class="col-xs-12">
@@ -22,36 +30,85 @@
           <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control stage-name">
         </div>
 
-
-
 <!--         <div class="no-padding form-group">
           <input ng-model="festCtrl.stageStartTime" type="date">
           <input ng-model="festCtrl.stageEndTime" type="date">
         </div> -->
-<!--         <span style="position:relative; right: 50px;">Event Start Time</span>
-        <span style="position:relative; right: 35px;" class="pull-right">Event End Time</span> -->
 
-
-        <!-- Write a helper function where user inputs a number 0 - 24 that represents start and end times. Start and Finish. Then plug into and ng-repeat in array -->
-        <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-
-
-
+        <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
         <div class="stage-row col-xs-10">
-          <div class="hour-box col-xs-1" name="mrker1_12">
-            <!-- Each Hour -->
+
+           <div class="hour-box col-xs-1" name="mrker1_12">
             <div class="row">
-            <!-- Every 5 minutes -->
-              <div class="five-minute-box col-xs-7" style="padding-left: 0px; padding-right: 0px;" marker="1_7">
-              <p class="artist-text text-center">Artist</p>
-              </div>
-              <div class="five-minute-box col-xs-3" style="padding-left: 0px; padding-right: 0px;" marker="7_10">
-              </div>
-              <div class="five-minute-box col-xs-2" style="padding-left: 0px; padding-right: 0px;" marker="11_12">
+              <div class="minute-box col-xs-1 col-md-offset-11">
+                <p class="artist-text">Artist</p>
+                <p class="artist-text">1:30 to 2:30</p>
               </div>
             </div>
           </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+              <div class="minute-box col-xs-3 col-xs-offset-9" style="margin-left: {{festCtrl.getOffset(artist)}}">
+                <p class="artist-text text-center">Artist</p>
+                <p class="artist-text text-center">1:45 to 2:15</p>
+              </div>
+            </div>
+          </div>
+              <!-- <div class="minute-box col-xs-3 col-xs-offset-9" style="margin-left: {{festCtrl.getOffset(artist)}}"> -->
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
         </div>
+        <!-- 1 column for buttons -->
         <div class="col-xs-1">
           <button class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
           <br><br>
@@ -59,32 +116,393 @@
         </div>
       </div>
     </div>
-
-
-
-    <!--// Right sidebar //-->
-    <!-- <div class="col-xs-2"> -->
-      <!-- Maybe make this a ui-view? So it hides until user clicks a button -->
-
-<!--           <div class="form-group">
-            <input ng-model="festCtrl.artistName" type="text" placeholder="Artist Name">
-          </div>
-
-          <div class="form-group">
-            <label>Start Time</label>
-            <input ng-model="festCtrl.actStartTime" type="date">
-          </div>
-
-          <div class="form-group">
-            <label>End Time</label>
-            <input ng-model="festCtrl.actEndTime" type="date">
-          </div>
-
-
-          <div class="text-center">
-            <button class="btn btn-primary" type="submit" ng-click="festCtrl.createFestival(festCtrl.title, festCtrl.stageName, festCtrl.stageStartTime, festCtrl.stageEndTime, festCtrl.artistName, festCtrl.actStartTime, festCtrl.actEndTime)" name="action">Save Festival</button>
-          </div>
-    </div>
-  </div> -->
   <!--// End of the row //-->
+  </div>
+
+
+
+
+  <br>
+
+
+
+
+  <!-- Entire stage timeline -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <!--// left side bar for stage names //-->
+        <div class="no-padding col-xs-1 input-group-sm">
+          <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control stage-name">
+        </div>
+
+<!--         <div class="no-padding form-group">
+          <input ng-model="festCtrl.stageStartTime" type="date">
+          <input ng-model="festCtrl.stageEndTime" type="date">
+        </div> -->
+
+        <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+        <div class="stage-row col-xs-10">
+
+           <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+        </div>
+        <!-- 1 column for buttons -->
+        <div class="col-xs-1">
+          <button class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
+          <br><br>
+          <button class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
+        </div>
+      </div>
+    </div>
+  <!--// End of the row //-->
+  </div>
+
+
+
+
+  <br>
+
+
+
+
+  <!-- Entire stage timeline -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <!--// left side bar for stage names //-->
+        <div class="no-padding col-xs-1 input-group-sm">
+          <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control stage-name">
+        </div>
+
+<!--         <div class="no-padding form-group">
+          <input ng-model="festCtrl.stageStartTime" type="date">
+          <input ng-model="festCtrl.stageEndTime" type="date">
+        </div> -->
+
+        <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+        <div class="stage-row col-xs-10">
+
+           <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+        </div>
+        <!-- 1 column for buttons -->
+        <div class="col-xs-1">
+          <button class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
+          <br><br>
+          <button class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
+        </div>
+      </div>
+    </div>
+  <!--// End of the row //-->
+  </div>
+
+
+
+  <br>
+
+
+
+
+  <!-- Entire stage timeline -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <!--// left side bar for stage names //-->
+        <div class="no-padding col-xs-1 input-group-sm">
+          <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control stage-name">
+        </div>
+
+<!--         <div class="no-padding form-group">
+          <input ng-model="festCtrl.stageStartTime" type="date">
+          <input ng-model="festCtrl.stageEndTime" type="date">
+        </div> -->
+
+        <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+        <div class="stage-row col-xs-10">
+
+           <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+        </div>
+        <!-- 1 column for buttons -->
+        <div class="col-xs-1">
+          <button class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
+          <br><br>
+          <button class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
+        </div>
+      </div>
+    </div>
+  <!--// End of the row //-->
+  </div>
+
+
+  <br>
+
+
+
+
+  <!-- Entire stage timeline -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <!--// left side bar for stage names //-->
+        <div class="no-padding col-xs-1 input-group-sm">
+          <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control stage-name">
+        </div>
+
+<!--         <div class="no-padding form-group">
+          <input ng-model="festCtrl.stageStartTime" type="date">
+          <input ng-model="festCtrl.stageEndTime" type="date">
+        </div> -->
+
+        <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+        <div class="stage-row col-xs-10">
+
+           <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="row">
+            </div>
+          </div>
+
+        </div>
+        <!-- 1 column for buttons -->
+        <div class="col-xs-1">
+          <button class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
+          <br><br>
+          <button class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
+        </div>
+      </div>
+    </div>
+  <!--// End of the row //-->
+  </div>
+
+
 </div>
