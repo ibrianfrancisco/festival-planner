@@ -10,6 +10,9 @@
   function FestivalController($state, FestivalService, $scope) {
     var vm = this;
 
+    // temporary template used to display timeline
+    vm.numbers = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00"];
+
     $scope.festivals = FestivalService.query();
 
     vm.goToFestival = function() {
@@ -27,17 +30,17 @@
       }
     }
 
-    vm.createFestival = function(title, stageName, startDate, endDate, artistName, startTime, endTime) {
+    vm.createFestival = function(title, date, stageName, stageStartTime, stageEndTime, artistName, actStartTime, actEndTime) {
       FestivalService.save({
         title: vm.title,
+        date: vm.date,
         stageName: vm.stageName,
-        startDate: vm.startDate,
-        endDate: vm.endDate,
+        stageStartTime: vm.stageStartTime,
+        stageEndTime: vm.stageEndTime,
         artistName: vm.artistName,
-        startTime: vm.startTime,
-        endTime: endTime
+        actStartTime: vm.actStartTime,
+        actEndTime: vm.actEndTime
       }, function(data) {
-        console.log(data);
         console.log('festival created');
         $state.go('homepage');
       });

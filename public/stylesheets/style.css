@@ -20,6 +20,10 @@ a {
   bottom: 39px;
 }
 
+.no-padding {
+  padding: 0px;
+}
+
 .white-text {
   color: #fff;
 }

@@ -16,7 +16,6 @@ function getAllFestivals(req, res, next) {
 }
 
 function createFestival(req, res, next) {
-  console.log(req);
   var user = User.findById(req.user._id, function(err, user) {
     // Festival.create(req.body).then(newFestival => {
     //   user.festivals.push(newFestival._id);
@@ -33,12 +32,13 @@ function createFestival(req, res, next) {
 
     Festival.create({
       title: req.body.title,
+      date: req.body.date,
       stageName: req.body.stageName,
-      startTime: req.body.startTime,
-      endTime: req.body.endTime,
+      startTime: req.body.stageStartTime,
+      endTime: req.body.stageEndTime,
       artistName: req.body.artistName,
-      stageStartTime: req.body.stageStartTime,
-      stageEndTime: req.body.stageEndTime
+      stageStartTime: req.body.actStartTime,
+      stageEndTime: req.body.actEndTime
     }).then(newFestival => {
       user.festivals.push(newFestival._id);
       newFestival.user = user._id;
