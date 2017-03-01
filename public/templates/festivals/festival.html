@@ -38,39 +38,38 @@
 
 
 
-
     <!--// Right sidebar //-->
     <div class="col-xs-2">
       <!-- Maybe make this a ui-view? So it hides until user clicks a button -->
       <h4 class="text-center">Inputs go here</h4>
-        <form ng-submit="festCtrl.createFestival()" class="col-md-12">
+        <form ng-submit="festCtrl.createFestival(festCtrl.title, festCtrl.stageName, festCtrl.stageStartTime, festCtrl.stageEndTime, festCtrl.artistName, festCtrl.actStartTime, festCtrl.actEndTime)" class="col-md-12">
           <div class="form-group">
-            <label for="title">Title</label>
-            <input ng-model="festCtrl.title" id="title" type="text" placeholder="This one shows">
+            <label>Title</label>
+            <input ng-model="festCtrl.title" type="text">
           </div>
           <div class="form-group">
-            <label for="stageName">stageName</label>
-            <input ng-model="festCtrl.festival.stageName" id="title" type="text">
+            <label>Stage Name</label>
+            <input ng-model="festCtrl.stageName" type="text">
           </div>
           <div class="form-group">
-            <label for="name">Name</label>
-            <input ng-model="festCtrl.name" id="name" type="text">
+            <label>Artist Name</label>
+            <input ng-model="festCtrl.artistName" type="text">
           </div>
           <div class="form-group">
-            <label for="startTime">startTime</label>
-            <input ng-model="festCtrl.startTime" id="endTime" type="date">
+            <label>Start Time</label>
+            <input ng-model="festCtrl.actStartTime" type="date">
           </div>
           <div class="form-group">
-            <label for="endTime">endTime</label>
-            <input ng-model="festCtrl.endTime" id="srtTime" type="date">
+            <label>End Time</label>
+            <input ng-model="festCtrl.actEndTime" type="date">
           </div>
           <div class="form-group">
-            <label for="startDate">Start Date</label>
-            <input ng-model="festCtrl.startDate" id="datee" type="date">
+            <label >Start Date</label>
+            <input ng-model="festCtrl.stageStartTime" type="date">
           </div>
           <div class="form-group">
-            <label for="endDate">endDate</label>
-            <input ng-model="festCtrl.endDate" id="dateee" type="date">
+            <label>End Date</label>
+            <input ng-model="festCtrl.stageEndTime" type="date">
           </div>
           <br>
           <div class="text-center">
@@ -79,4 +78,5 @@
         </form>
     </div>
   </div>
+  <!--// End of the row //-->
 </div>
