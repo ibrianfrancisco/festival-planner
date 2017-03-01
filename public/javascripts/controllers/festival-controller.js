@@ -11,35 +11,6 @@
     var vm = this;
 
 
-    // Create a parser
-        // var parser = datetime("yyyy-MM-dd");
-
-        // // Set to current date
-        // parser.setDate(new Date);
-        // parser.getText();   // -> "2015-01-30"
-
-        // // Parse a date string
-        // parser.parse("2015-01-30");
-        // parser.getDate();   // -> DateTime object
-
-        // // Set working timezone. Changing timezone will not affect date object but
-        // // date string (i.e. parser.getText()).
-        // parser.setTimezone("+0800");
-
-        // // Reset to default timezone.
-        // parser.setTimezone();
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // temporary template used to display timeline
