@@ -102,11 +102,12 @@ a {
   top: 40%;
   left: 50%;
 
-  margin: -180px 0 0 -400px;
+  margin: -220px 0 0 -400px;
 }
 
 .header-text {
   color: #fff;
+  text-shadow: 2px 2px #000000;
 }
 
 .logo {
