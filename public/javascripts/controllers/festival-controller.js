@@ -10,6 +10,38 @@
   function FestivalController($state, FestivalService, $scope) {
     var vm = this;
 
+
+    // Create a parser
+        // var parser = datetime("yyyy-MM-dd");
+
+        // // Set to current date
+        // parser.setDate(new Date);
+        // parser.getText();   // -> "2015-01-30"
+
+        // // Parse a date string
+        // parser.parse("2015-01-30");
+        // parser.getDate();   // -> DateTime object
+
+        // // Set working timezone. Changing timezone will not affect date object but
+        // // date string (i.e. parser.getText()).
+        // parser.setTimezone("+0800");
+
+        // // Reset to default timezone.
+        // parser.setTimezone();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // temporary template used to display timeline
     vm.numbers = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00"];
 
