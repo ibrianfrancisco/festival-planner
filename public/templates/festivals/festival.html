@@ -19,7 +19,7 @@
       <div class="row">
         <!--// left side bar for stage names //-->
         <div class="no-padding col-xs-1 input-group-sm">
-          <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control" style="top: 35px; right:10px; position: relative;">
+          <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control stage-name">
         </div>
 
 
@@ -33,7 +33,7 @@
 
 
         <!-- Write a helper function where user inputs a number 0 - 24 that represents start and end times. Start and Finish. Then plug into and ng-repeat in array -->
-        <span style="position:relative; right: 21px;" ng-repeat="number in festCtrl.numbers track by $index">{{number}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
 
 
 
@@ -53,9 +53,9 @@
           </div> -->
         </div>
         <div class="col-xs-1">
-          <button  style="position: relative;" class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
+          <button class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
           <br><br>
-          <button  style="position: relative;" class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
+          <button class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
         </div>
       </div>
     </div>

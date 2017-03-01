@@ -20,6 +20,16 @@ a {
   bottom: 39px;
 }
 
+.stage-name {
+  top: 35px;
+  right: 10px;
+  position: relative;
+}
+.stage-times {
+  position: relative;
+  right: 21px;
+}
+
 .no-padding {
   padding: 0px;
 }
