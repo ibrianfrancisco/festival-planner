@@ -6,21 +6,26 @@
 /*   Festival Time Sheet   */
 
 .stage-name {
-  top: 40px;
+  top: 10px;
   right: 10px;
   position: relative;
-  font-size: 14px;
+  font-size: 24px;
 }
 
 .stage-row {
   border: 1px solid black;
-  /*width: 100%;*/
+  width: 1072px;
   height: 58px;
   padding-left: 0px;
   padding-right: 0px;
   left: 0px;
   /*bottom: 58px;*/
   position: relative;
+}
+
+#add-artist {
+  position: absolute;
+  top: 15px;
 }
 
 /*.artist-row {
@@ -38,7 +43,7 @@
   position: relative;
   right: 53px;
   /*padding: 0 12px 0 40px;*/
-  padding: 0 1% 0 3.5%;
+  padding: 0 1.75% 0 3.5%;
 }
 
 .hour-box {
@@ -56,14 +61,19 @@
 */}
 
 .artist-text {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 900;
   text-align: center;
   color: #fff;
 }
 
 
-
+/*.act-on-stage {
+  position: absolute;
+  height: 58px;
+  width: 91.66%;
+  border: 2px solid black;
+}*/
 
 
 /*   ---------------------    */

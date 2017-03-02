@@ -42,24 +42,21 @@
 <div ng-repeat="stage in festCtrl.festival.stages track by $index">
   <div class="container">
     <br>
+    <div class="no-padding row input-group-sm">
+      <p class="stage-name">{{stage.stageName}}</p>
+    </div>
     <!-- Entire stage timeline -->
     <div class="row">
       <div class="col-xs-12">
         <div class="row">
           <!--// left side bar for stage names //-->
-          <div class="no-padding col-xs-1 input-group-sm">
-            <p class="stage-name">{{stage.stageName}}</p>
-          </div>
 
           <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
 
-          <div class="artist-row" ng-repeat="act in stage track by $index">
-            <div ng-repeat="artist in act track by $index" style="left: 8.33%; width: 7%; height: 58px; border: 1px black solid; background-color: grey; position: absolute;">
-              <p class="artist-text">{{artist.artistName}}</p>
-              <p class="artist-text">{{artist.actStartTime}} - {{artist.actEndTime|date:'shortTime'}}</p>
-            </div>
-
-            <!-- <div style="left: {{festCtrl.getOffset({{artist.actStartTime}})}}"></div> -->
+          <div class="act-on-stage" style="left: {{festCtrl.leftOffset(act.actStartTime)}}; width: {{festCtrl.actWidth(act)}}; height: 58px; border: 1px black solid; background-color: grey; position: absolute;" ng-repeat="act in stage.acts track by $index">
+              <p class="artist-text">{{act.artistName}}</p>
+              <p class="artist-text">{{festCtrl.formatTime(act.actStartTime)}} - {{festCtrl.formatTime(act.actEndTime)}}</p>
+          </div>
 
 
 
@@ -87,16 +84,15 @@
             <div id="artist-box" style="left: 62.5%; width: 21%; height: 57px; border: 1px black solid; background-color: blue; position: absolute;">
               <p class="artist-text">8:00 - 11:00</p>
             </div> -->
-          </div>
 
 
 
-          <div class="stage-row col-xs-10">
+          <div class="stage-row col-xs-11">
           </div>
 
           <!-- 1 column for buttons -->
           <div class="col-xs-1">
-            <button class="btn btn-primary btn-xs glyphicon glyphicon-plus" ng-click="festCtrl.addAct(stage)"></button>
+            <button class="btn btn-primary btn-sm" id="add-artist" ng-click="festCtrl.addAct(stage)">Add Artist</button>
           </div>
         </div>
       </div>

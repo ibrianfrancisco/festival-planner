@@ -68,12 +68,25 @@
     }
 
 
-    vm.leftOffset = function (startTime) {
-
+    vm.leftOffset = function (dateStr) {
+      var offsetPerHour = 1072/12;
+      var dt = new Date(dateStr);
+      var baseDate = new Date(dateStr).setHours(12, 0, 0, 0);
+      var hrs = (dt - baseDate) / (1000 * 60 * 60);
+      console.log('hrs', hrs)
+      return (hrs * offsetPerHour) + 'px';
     }
 
-    vm.widthOffset = function (endTime) {
+    vm.actWidth = function (act) {
+      var widthPerHour = 1072/12;
+      var diff = (new Date(act.actEndTime).getTime() - new Date(act.actStartTime).getTime());
+      diff = diff / (1000 * 60 * 60);
+      return (diff * widthPerHour) + 'px';
+    }
 
+    vm.formatTime = function(dateStr) {
+      var dt = new Date(dateStr);
+      return dt.getHours() + ':' + dt.getMinutes();
     }
 
   }
