@@ -5,21 +5,29 @@
   angular.module('app')
   .controller('ShowController', ShowController);
 
-  ShowController.$inject = ['$stateParams', 'Festival'];
+  ShowController.$inject = ['$stateParams', 'Festival', 'datetime'];
 
-  function ShowController($stateParams, Festival) {
+  function ShowController($stateParams, Festival, datetime) {
     var vm = this;
+    var parser = datetime("yyyy-MM-dd");
+
+    // vm.test = parser.setDate(fes);
+
+
+    // Margin-left
+    // Every 5 minutes is 0.69444444%
+
+    // width is the
+
 
     // temporary template used to display timeline
-    vm.numbers = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00"];
+    vm.numbers = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
 
     // $stateParams is the id that gets put into the url. then these get and delete things happen from this page
     vm.festival = Festival.get({id: $stateParams.id});
 
     vm.addStage = function() {
-      // console.log('this is vm.festival');
-      // console.log(vm.festival.stages[0]._id);
       //assume vm.festival already exists
       // vm.festival = {_id: $stateParams.id};
       // festId goes to controllers/festivals and vm.festival._id is the festival id that's provded already
@@ -48,7 +56,6 @@
         console.log('artist created');
       });
     }
-
 
   }
 

@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-  angular.module('app', ['ui.router', 'ngAnimate', 'ngResource'])
+  angular.module('app', ['ui.router', 'ngAnimate', 'ngResource', 'datetime'])
     .config(configRoutes)
     .run(runBlock)
     .run(loginBlock);

@@ -12,9 +12,71 @@
       <input type="text" class="input-form" placeholder="Artist Name" ng-model="festCtrl.artistName">
       <input type="date" class="input-form" ng-model="festCtrl.actStartTime">
       <input type="date" class="input-form" ng-model="festCtrl.actEndTime">
+
+
+
+<!--     <select class="form-control">
+      <option>12:00</option>
+      <option>12:05</option>
+      <option>12:10</option>
+      <option>12:15</option>
+      <option>12:20</option>
+
+      <option>12:25</option>
+      <option>12:30</option>
+      <option>12:35</option>
+      <option>4</option>
+      <option>5</option>
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+
+    </select> -->
     </div>
   </div>
-</div>
+  <!-- <input type="text" datetime="yyyy-MM-dd" ng-model="myDate" min="Jan 1, 1990" max="Dec 31, 2050"> -->
+<!--   <input type="text" datetime="HH:mm:ss" ng-model="festCtrl.myDate">
+  <p>{{festCtrl.myDate|date:"shortTime"}}</p>
+</div> -->
 
 
 <div ng-repeat="stage in festCtrl.festival.stages track by $index">
@@ -26,16 +88,18 @@
         <div class="row">
           <!--// left side bar for stage names //-->
           <div class="no-padding col-xs-1 input-group-sm">
-            <!-- <input ng-model="festCtrl.stageName" type="text" placeholder="Stage" class="form-control stage-name"> -->
-            <p class="stage-name">{{stage.stageName}}</p>
+            <p class="stage-name"><!-- {{stage.stageName}} --></p>
           </div>
 
-    <!--         <div class="no-padding form-group">
-            <input ng-model="festCtrl.stageStartTime" type="date">
-            <input ng-model="festCtrl.stageEndTime" type="date">
-          </div> -->
-
           <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+
+          <div class="artist-row">
+            <div id="artist-box">
+            </div>
+          </div>
+
+
+
           <div class="stage-row col-xs-10">
 
              <div class="hour-box col-xs-1" name="mrker1_12">
@@ -43,62 +107,63 @@
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker2_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker3_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker4_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker5_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker6_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker7_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker8_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker9_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker10_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker11_12">
               <div class="row">
               </div>
             </div>
 
-            <div class="hour-box col-xs-1" name="mrker1_12">
+            <div class="hour-box col-xs-1" name="mrker12_12">
               <div class="row">
               </div>
             </div>
 
           </div>
+
           <!-- 1 column for buttons -->
           <div class="col-xs-1">
             <button class="btn btn-primary btn-xs glyphicon glyphicon-plus" ng-click="festCtrl.addAct(stage)"></button>
