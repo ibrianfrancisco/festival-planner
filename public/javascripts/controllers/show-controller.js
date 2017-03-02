@@ -9,7 +9,7 @@
 
   function ShowController($stateParams, Festival, datetime) {
     var vm = this;
-    var parser = datetime("yyyy-MM-dd");
+    var parser = datetime("hh:mm a");
 
     // vm.test = parser.setDate(fes);
 
@@ -44,7 +44,15 @@
     }
 
     vm.addAct = function(stage) {
-      // vm.festival = {_id: $stateParams.id};
+
+      console.log('start time');
+      console.log(vm.actStartTime);
+      console.log('start time with parser');
+      console.log(vm.actStartTime);
+
+      // where to convert date to String and stuff for rendering?
+      // artist block isn't aligning to 0% left
+
       Festival.addAct({
         stageId: stage._id,
         artistName: vm.artistName,
@@ -53,8 +61,19 @@
       }, function(festival) {
         vm.festival = festival;
         console.log(festival);
-        console.log('artist created');
+        $('#artist-name').val('');
+        $('#act-start-time').val('');
+        $('#act-end-time').val('');
       });
+    }
+
+
+    vm.leftOffset = function (startTime) {
+
+    }
+
+    vm.widthOffset = function (endTime) {
+
     }
 
   }

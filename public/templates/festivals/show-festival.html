@@ -10,14 +10,16 @@
     <h2 class="text-center col-xs-3">{{festCtrl.festival.date|date:'fullDate'}}</h2>
     <div class="col-xs-3">
       <label for="artistName">Artist Name:
-        <input type="text" class="input-form" placeholder="Artist Name" ng-model="festCtrl.artistName">
+        <input id="artist-name" type="text" class="input-form" placeholder="Artist Name" ng-model="festCtrl.artistName">
       </label>
       <label for="actStartTime">Start Time:
-        <input type="text" datetime="HH:mm" ng-model="festCtrl.actStartTime">
+        <input id="act-start-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actStartTime">
       </label>
+      {{festCtrl.actStartTime}}
       <label for="actEndTime">End Time:
-        <input type="text" datetime="HH:mm" ng-model="festCtrl.actEndTime">
+        <input id="act-end-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actEndTime">
       </label>
+      {{festCtrl.actEndTime}}
 
 <!--     <select class="form-control">
       <option>12:00</option>
@@ -25,55 +27,6 @@
       <option>12:10</option>
       <option>12:15</option>
       <option>12:20</option>
-
-      <option>12:25</option>
-      <option>12:30</option>
-      <option>12:35</option>
-      <option>4</option>
-      <option>5</option>
-
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-
     </select> -->
     </div>
   </div>
@@ -100,8 +53,26 @@
 
           <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
 
-          <div class="artist-row">
-            <div id="artist-box" style="left: 8.33%; width: 7%; height: 58px; border: 1px black solid; background-color: grey; position: absolute;">
+          <div class="artist-row" ng-repeat="act in stage track by $index">
+            <div ng-repeat="artist in act track by $index" style="left: 8.33%; width: 7%; height: 58px; border: 1px black solid; background-color: grey; position: absolute;">
+              <p class="artist-text">{{artist.artistName}}</p>
+              <p class="artist-text">{{artist.actStartTime}} - {{artist.actEndTime|date:'shortTime'}}</p>
+            </div>
+
+            <!-- <div style="left: {{festCtrl.getOffset({{artist.actStartTime}})}}"></div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--             <div id="artist-box" style="left: 8.33%; width: 7%; height: 58px; border: 1px black solid; background-color: grey; position: absolute;">
               <p class="artist-text">12:00 - 1:00</p>
             </div>
             <div id="artist-box" style="left: 22.23%; width: 10%; height: 57px; border: 1px black solid; background-color: red; position: absolute;">
@@ -110,17 +81,11 @@
             <div id="artist-box" style="left: 35.75%; width: 7%; height: 57px; border: 1px black solid; background-color: green; position: absolute;">
               <p class="artist-text">4:00 - 6:00</p>
             </div>
-<!--             <div id="artist-box" style="left: 48.7%; width: 13%; height: 57px; border: 1px black solid; background-color: purple; position: absolute;">
+            <div id="artist-box" style="left: 48.7%; width: 13%; height: 57px; border: 1px black solid; background-color: purple; position: absolute;">
               <p class="artist-text">6:00 - 8:00</p>
             </div>
- -->            <div id="artist-box" style="left: 62.5%; width: 21%; height: 57px; border: 1px black solid; background-color: blue; position: absolute;">
+            <div id="artist-box" style="left: 62.5%; width: 21%; height: 57px; border: 1px black solid; background-color: blue; position: absolute;">
               <p class="artist-text">8:00 - 11:00</p>
-            </div>
-<!--             <div id="artist-box" style="left: 15.28%; width: 83.35%; height: 57px; border: 1px black solid; background-color: red; position: absolute;">
-              <p class="artist-text">Beyonce</p>
-            </div>
-            <div id="artist-box" style="left: 15.28%; width: 83.35%; height: 57px; border: 1px black solid; background-color: red; position: absolute;">
-              <p class="artist-text">Beyonce</p>
             </div> -->
           </div>
 
