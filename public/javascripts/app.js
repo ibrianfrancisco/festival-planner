@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-  angular.module('app', ['ui.router', 'ngAnimate', 'ngResource'])
+  angular.module('app', ['ui.router', 'ngAnimate', 'ngResource', 'datetime'])
     .config(configRoutes)
     .run(runBlock)
     .run(loginBlock);
@@ -73,6 +73,20 @@
         url: '/festival',
         templateUrl: 'templates/festivals/festival.html',
         controller: 'FestivalController as festCtrl',
+        loginRequired: true
+      })
+
+      .state('createfestival', {
+        url: '/createfestival',
+        templateUrl: 'templates/festivals/create-festival.html',
+        controller: 'FestivalController as festCtrl',
+        loginRequired: true
+      })
+
+      .state('showfestival', {
+        url: '/festival/:id',
+        templateUrl: 'templates/festivals/show-festival.html',
+        controller: 'ShowController as festCtrl',
         loginRequired: true
       })
 
