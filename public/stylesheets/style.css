@@ -6,7 +6,7 @@
 /*   Festival Time Sheet   */
 
 .stage-name {
-  top: 20px;
+  top: 40px;
   right: 10px;
   position: relative;
   font-size: 14px;
@@ -28,7 +28,7 @@
 }
 
 .hour-box {
-  /*border: 2px solid red;*/
+  border: 2px solid red;
   height: 100%;
 /*  padding-left: 0px;
   padding-right: 0px;
@@ -116,11 +116,12 @@ a {
   top: 40%;
   left: 50%;
 
-  margin: -180px 0 0 -400px;
+  margin: -220px 0 0 -400px;
 }
 
 .header-text {
   color: #fff;
+  text-shadow: 2px 2px #000000;
 }
 
 .logo {

@@ -10,9 +10,6 @@
   function FestivalController($state, Festival, $scope) {
     var vm = this;
 
-    // temporary template used to display timeline
-    vm.numbers = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00"];
-
     $scope.festivals = Festival.query();
 
     vm.goToFestival = function() {
@@ -30,6 +27,13 @@
       }
     }
 
+    vm.deleteStage = function (festival) {
+      festival.$delete(function() {
+        $scope.festivals.stages.splice($scope.festivals.stages.findIndex(t => t._id), 1);
+        console.log('yes');
+      })
+    }
+
     vm.getFestival = function(festival) {
       var festId = festival;
       Festival.getFestival({festId: festId}, function(festival) {
@@ -38,20 +42,6 @@
         vm.festival = festival;
         $state.go('showfestival', {id: festival._id});
       })
-    }
-
-    vm.createFestival = function(title, date, stageName, artistName, actStartTime, actEndTime) {
-      Festival.save({
-        title: vm.title,
-        date: vm.date,
-        stageName: vm.stageName,
-        artistName: vm.artistName,
-        actStartTime: vm.actStartTime,
-        actEndTime: vm.actEndTime
-      }, function(data) {
-        console.log('festival created');
-        $state.go('homepage');
-      });
     }
 
     vm.initFestival = function(title, date) {

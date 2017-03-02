@@ -2,7 +2,7 @@
 <div class="container text-center">
   <header>Sign Up</header>
   <div>
-    <form ng-submit="userCtrl.signup()" class="col-md-12">
+    <form ng-submit="userCtrl.signup()">
       <br>
       <div class="form-group">
         <label for="name">Name</label>
@@ -20,5 +20,6 @@
       <button class="btn btn-primary" type="submit" name="action">Sign In</button>
     </form>
     <br>
+    <a ui-sref="login">Have an Account?</a>
   </div>
 </div>

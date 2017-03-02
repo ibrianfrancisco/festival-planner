@@ -4,14 +4,11 @@
       <button class="btn btn-primary btn-md" ng-click="festCtrl.addStage()">Add Stage</button>
     </div>
     <div class="col-xs-2">
-      <input type="text" class="input-form" placeholder="Stage Name" ng-model="festCtrl.stageName">
+      <input type="text" id="stage-input" class="input-form" placeholder="Stage Name" ng-model="festCtrl.stageName">
     </div>
     <h1 class="text-center col-xs-3">{{festCtrl.festival.title}}</h1>
     <h2 class="text-center col-xs-3">{{festCtrl.festival.date|date:'fullDate'}}</h2>
-    <div class="text-center col-xs-1">
-      <button class="btn btn-primary btn-md">Add Artist</button>
-    </div>
-    <div class="col-xs-2">
+    <div class="col-xs-3">
       <input type="text" class="input-form" placeholder="Artist Name" ng-model="festCtrl.artistName">
       <input type="date" class="input-form" ng-model="festCtrl.actStartTime">
       <input type="date" class="input-form" ng-model="festCtrl.actEndTime">
@@ -20,7 +17,7 @@
 </div>
 
 
-<div ng-repeat="stage in festCtrl.festival.stage track by $index">
+<div ng-repeat="stage in festCtrl.festival.stages track by $index">
   <div class="container">
     <br>
     <!-- Entire stage timeline -->
@@ -104,9 +101,9 @@
           </div>
           <!-- 1 column for buttons -->
           <div class="col-xs-1">
-            <button class="btn btn-primary btn-xs glyphicon glyphicon-plus"></button>
+            <button class="btn btn-primary btn-xs glyphicon glyphicon-plus" ng-click="festCtrl.addAct(stage)"></button>
             <br><br>
-            <button class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
+            <button ng-click="festCtrl.deleteStage(stage)" class="btn btn-danger btn-xs glyphicon glyphicon-remove"></button>
           </div>
         </div>
       </div>

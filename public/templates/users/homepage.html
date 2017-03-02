@@ -3,7 +3,7 @@
   <h1 class="white-text text-center">Recently Added</h1>
   <div class="white-text put-something-here"><p>Put Cards Here That Users can Copy over</p></div>
 </div>
-<h1 class="text-center">My Festivals</h1>
+<h1 class="text-center margin-zero">My Festivals</h1>
 
 <div class="container-fluid">
   <div class="row">
@@ -13,7 +13,7 @@
         <div class="caption">
           <span ng-click="festCtrl.deleteFestival(festival)" class="btn btn-danger btn-xs pull-right">Delete</span>
           <h3>{{festival.title}}</h3>
-          <p>{{festival._id}}</p>
+          <p>{{festival.date|date:'fullDate'}}</p>
           <span>
             <a ng-click="festCtrl.getFestival(festival._id)" role="button" class="btn btn-primary btn-sm">Show</a>
           </span>

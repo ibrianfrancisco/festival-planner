@@ -9,7 +9,8 @@ module.exports = {
   createFestival,
   deleteFestival,
   addStage,
-  addAct
+  addAct,
+  deleteStage
 }
 
 function getAllFestivals(req, res, next) {
@@ -44,11 +45,7 @@ function createFestival(req, res, next) {
 
     Festival.create({
       title: req.body.title,
-      date: req.body.date,
-      stageName: req.body.stageName,
-      artistName: req.body.artistName,
-      stageStartTime: req.body.actStartTime,
-      stageEndTime: req.body.actEndTime
+      date: req.body.date
     }).then(newFestival => {
       user.festivals.push(newFestival._id);
       newFestival.user = user._id;
@@ -71,12 +68,21 @@ function deleteFestival(req, res, next) {
   }).catch(err => res.status(400).json(err));
 }
 
+function deleteStage(req, res, next) {
+  Festival.stages.findByIdAndRemove(req.params.id)
+  .then(deletedFest => {
+    res.json(deletedFest);
+  }).catch(err => res.status(400).json(err));
+}
+
+
+
 function addStage(req, res, next) {
   // MARKER 1 - the req.params.id comes from the other MARKER 1 located in routes/api.js
   Festival.findById(req.params.id)
   .then(festival => {
     // change back to stages and in models
-    festival.stage.push({
+    festival.stages.push({
       // MARKER 2 - stageName is TRANSFERED TO the festival instance's stageName - req.body.stageName comes from festival-controller
       stageName: req.body.stageName
     });
@@ -100,6 +106,12 @@ festival.stages.id(stageId).acts.remove(actId)
 
 
 */
+// function addAct(req, res, next) {
+//   Festival.findOne({})
+//   .then(festival => {
+//     festival.stages[0]._id
+//   })
+// }
 
 function addAct(req, res, next) {
   // assumes route of POST /api/stages/:id/acts
@@ -117,6 +129,8 @@ function addAct(req, res, next) {
     return festival.save();
   })
   .then(festival => {
+    console.log('act up');
+    console.log(festival);
     res.status(200).json(festival);
   });
 }

@@ -28,10 +28,19 @@
           method: 'GET',
           url: '/api/festivals/:festId',
           params: {festId: '@festId'}
+        },
+
+        addAct: {
+          method: 'POST',
+          url: '/api/stages/:stageId/acts',
+          params: {stageId: '@stageId'},
+          artistName: 'artistName'
+          // actStartTime: 'actStartTime',
+          // actEndTime: 'actEndTime'
         }
       }
     )
   }
 
-// I forget where these comes
 })();
+
