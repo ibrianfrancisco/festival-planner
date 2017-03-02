@@ -5,6 +5,7 @@ var User = require('../models/user');
 
 module.exports = {
   getAllFestivals,
+  getFestival,
   createFestival,
   deleteFestival,
   addStage,
@@ -14,6 +15,15 @@ module.exports = {
 function getAllFestivals(req, res, next) {
   Festival.find({user: req.user._id}).exec().then(festivals => {
     res.json(festivals);
+  }).catch(err => res.status(500).json(err));
+}
+
+function getFestival(req, res, next) {
+  Festival.findById(req.params.id)
+  .then(festival => {
+    console.log('i did it');
+    console.log(festival);
+    res.json(festival);
   }).catch(err => res.status(500).json(err));
 }
 
@@ -36,8 +46,6 @@ function createFestival(req, res, next) {
       title: req.body.title,
       date: req.body.date,
       stageName: req.body.stageName,
-      startTime: req.body.stageStartTime,
-      endTime: req.body.stageEndTime,
       artistName: req.body.artistName,
       stageStartTime: req.body.actStartTime,
       stageEndTime: req.body.actEndTime
@@ -67,7 +75,8 @@ function addStage(req, res, next) {
   // MARKER 1 - the req.params.id comes from the other MARKER 1 located in routes/api.js
   Festival.findById(req.params.id)
   .then(festival => {
-    festival.stages.push({
+    // change back to stages and in models
+    festival.stage.push({
       // MARKER 2 - stageName is TRANSFERED TO the festival instance's stageName - req.body.stageName comes from festival-controller
       stageName: req.body.stageName
     });

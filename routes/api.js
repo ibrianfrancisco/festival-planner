@@ -17,6 +17,7 @@ router.use(function(req, res, next) {
 
 // Protected routes (authentication required)
 router.get('/festivals', festCtrl.getAllFestivals);
+router.get('/festivals/:id', festCtrl.getFestival);
 router.post('/festivals', festCtrl.createFestival);
 router.delete('/festivals/:id', festCtrl.deleteFestival);
 // MARKER 1 - this :id comes from controllers/festivals.js

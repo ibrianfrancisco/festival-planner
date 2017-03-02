@@ -6,9 +6,10 @@
 /*   Festival Time Sheet   */
 
 .stage-name {
-  top: 35px;
+  top: 20px;
   right: 10px;
   position: relative;
+  font-size: 14px;
 }
 
 .stage-row {
@@ -27,7 +28,7 @@
 }
 
 .hour-box {
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   height: 100%;
 /*  padding-left: 0px;
   padding-right: 0px;

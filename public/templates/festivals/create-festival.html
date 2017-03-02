@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="input-group-lg col-xs-3 col-xs-offset-3">
+      <input ng-model="festCtrl.title" type="text" class="form-control" placeholder="Festival Name" aria-describedby="sizing-addon1">
+    </div>
+    <div class="input-group-lg col-xs-offset-0 col-xs-3">
+      <input ng-model="festCtrl.date" type="date" class="form-control">
+    </div>
+  </div>
+  <div class="text-center">
+  <br>
+    <button ng-click="festCtrl.initFestival(festCtrl.title, festCtrl.date)" class="btn btn-primary">Create Festival</button>
+  </div>
+</div>
+

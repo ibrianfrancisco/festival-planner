@@ -76,6 +76,20 @@
         loginRequired: true
       })
 
+      .state('createfestival', {
+        url: '/createfestival',
+        templateUrl: 'templates/festivals/create-festival.html',
+        controller: 'FestivalController as festCtrl',
+        loginRequired: true
+      })
+
+      .state('showfestival', {
+        url: '/festival/:id',
+        templateUrl: 'templates/festivals/show-festival.html',
+        controller: 'ShowController as festCtrl',
+        loginRequired: true
+      })
+
     $urlRouterProvider.otherwise('/welcome');
   }
 
