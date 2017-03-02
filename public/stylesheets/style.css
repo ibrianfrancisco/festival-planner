@@ -9,7 +9,7 @@
   top: 10px;
   right: 10px;
   position: relative;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .stage-row {
@@ -39,11 +39,15 @@
   top: 60px;
 }*/
 
+.stage-time {
+  width: 1132px;
+}
+
 .stage-times {
   position: relative;
   right: 53px;
   /*padding: 0 12px 0 40px;*/
-  padding: 0 1.75% 0 3.5%;
+  padding: 0 31px;
 }
 
 .hour-box {

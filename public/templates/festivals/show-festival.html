@@ -15,19 +15,9 @@
       <label for="actStartTime">Start Time:
         <input id="act-start-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actStartTime">
       </label>
-      {{festCtrl.actStartTime}}
       <label for="actEndTime">End Time:
         <input id="act-end-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actEndTime">
       </label>
-      {{festCtrl.actEndTime}}
-
-<!--     <select class="form-control">
-      <option>12:00</option>
-      <option>12:05</option>
-      <option>12:10</option>
-      <option>12:15</option>
-      <option>12:20</option>
-    </select> -->
     </div>
   </div>
 </div>
@@ -42,7 +32,7 @@
 <div ng-repeat="stage in festCtrl.festival.stages track by $index">
   <div class="container">
     <br>
-    <div class="no-padding row input-group-sm">
+    <div class="no-padding row">
       <p class="stage-name">{{stage.stageName}}</p>
     </div>
     <!-- Entire stage timeline -->
@@ -51,7 +41,9 @@
         <div class="row">
           <!--// left side bar for stage names //-->
 
-          <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+          <div class="stage-time">
+            <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+          </div>
 
           <div class="act-on-stage" style="left: {{festCtrl.leftOffset(act.actStartTime)}}; width: {{festCtrl.actWidth(act)}}; height: 58px; border: 1px black solid; background-color: grey; position: absolute;" ng-repeat="act in stage.acts track by $index">
               <p class="artist-text">{{act.artistName}}</p>

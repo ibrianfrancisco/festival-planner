@@ -44,15 +44,6 @@
     }
 
     vm.addAct = function(stage) {
-
-      console.log('start time');
-      console.log(vm.actStartTime);
-      console.log('start time with parser');
-      console.log(vm.actStartTime);
-
-      // where to convert date to String and stuff for rendering?
-      // artist block isn't aligning to 0% left
-
       Festival.addAct({
         stageId: stage._id,
         artistName: vm.artistName,
