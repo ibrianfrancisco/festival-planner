@@ -21,7 +21,7 @@
 
 
     // temporary template used to display timeline
-    vm.numbers = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+    vm.numbers = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00"];
 
 
     // $stateParams is the id that gets put into the url. then these get and delete things happen from this page

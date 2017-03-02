@@ -18,12 +18,12 @@
   height: 58px;
   padding-left: 0px;
   padding-right: 0px;
-  margin-left: -3px;
-  bottom: 58px;
+  left: 0px;
+  /*bottom: 58px;*/
   position: relative;
 }
 
-.artist-row {
+/*.artist-row {
   width: 975px;
   height: 58px;
   position: relative;
@@ -31,21 +31,14 @@
   padding-left: 0px;
   padding-right: 0px;
   margin-left: -3px;
-  /*top: 60px;*/
-}
-
-#artist-box {
-  left: 50%;
-  width: 25%;
-  height: 57px;
-  border: 1px dashed green;
-  position: relative;
-}
+  top: 60px;
+}*/
 
 .stage-times {
   position: relative;
-  right: 153px;
-  padding: 0 26px 0 47px;
+  right: 53px;
+  /*padding: 0 12px 0 40px;*/
+  padding: 0 1% 0 3.5%;
 }
 
 .hour-box {
@@ -63,8 +56,10 @@
 */}
 
 .artist-text {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 900;
+  text-align: center;
+  color: #fff;
 }
 
 
