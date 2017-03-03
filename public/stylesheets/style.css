@@ -100,6 +100,11 @@ hr.style-one {
 .app-title {
   color: #DC381F;
 }
+
+#footer-text {
+  position: relative;
+  top: 33px;
+}
 /*   ---------------------    */
 
 body {
@@ -245,9 +250,9 @@ a {
   background-color: rgb(235,235,235);
   position: relative;
   text-align: center;
-  top: 19px;
+  top: 29px;
   margin: 0 auto;
-  height: 55px;
+  height: 63px;
 }
 
 
