@@ -20,7 +20,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-6 col-md-4" ng-repeat="festival in festivals | filter: search | orderBy:vm.sortBy:vm.descending track by $index">
+    <div class="col-xs-6 col-md-4" ng-repeat="festival in festivals | filter: search | orderBy:vm.sortBy:!vm.descending track by $index">
       <div class="thumbnail">
         <img src="/images/homeBG.jpg" alt="Festival Imgs">
         <div class="caption">
@@ -51,13 +51,15 @@
           <h4 class="modal-title">Create Festival</h4>
         </div>
         <div class="modal-body">
-          <span for="title">Title:
-            <input ng-model="festCtrl.title" type="text" class="form-control" placeholder="Festival Name" aria-describedby="sizing-addon1">
-          </span>
-          <br>
-          <span for="title">Date:
-            <input ng-model="festCtrl.date" type="date" class="form-control">
-          </span>
+          <form>
+            <span for="title">Title:
+              <input ng-model="festCtrl.title" type="text" class="form-control" placeholder="Festival Name" aria-describedby="sizing-addon1" required autofocus>
+            </span>
+            <br>
+            <span for="title">Date:
+              <input ng-model="festCtrl.date" type="date" class="form-control" required>
+            </span>
+          </form>
         </div>
         <div class="modal-footer">
           <button ng-click="festCtrl.createFestival(festCtrl.title, festCtrl.date)" class="btn btn-primary">Create Festival</button>

@@ -1,53 +1,47 @@
 <div class="container">
   <div class="row">
+    <div class="col-xs-6">
+      <header class="fira-sans text-center">{{festCtrl.festival.title}}</header>
+    </div>
+    <div class="col-xs-6">
+      <h1 class="text-center" id="date-margin-fix">{{festCtrl.festival.date|date:'fullDate'}}</h1>
+    </div>
+  </div>
+  <hr class="style-one">
+  <div class="row">
     <div class="col-xs-3">
       <div class="navbar-form input-group">
-<!--         <input type="text" class="form-control" id="stage-input" placeholder="Stage Name" ng-model="festCtrl.stageName">
         <span class="input-group-btn">
-          <button class="btn btn-primary" type="button" ng-click="festCtrl.addStage()">Add Stage</button>
-        </span> -->
+          <button class="btn btn-success" type="button" ng-click="festCtrl.addStage()">Add Stage</button>
+        </span>
+        <input type="text" class="form-control" id="stage-input" placeholder="Stage Name" ng-model="festCtrl.stageName" required autofocus>
       </div>
     </div>
-    <header class="fira-sans text-center col-xs-6">{{festCtrl.festival.title}}</header>
-      <!-- <h2 class="text-center col-xs-8 col-xs-6">{{festCtrl.festival.date|date:'fullDate'}}</h2> -->
-    <div class="col-xs-3">
-    <form class="navbar-form" role="search">
-      <div class="form-group">
-        <label for="artistName">Artist Name:
-          <input id="artist-name" type="text" class="form-control" placeholder="Artist Name" ng-model="festCtrl.artistName">
-        </label>
+    <form class="navbar-form">
+      <div class="col-xs-3">
+        <div class="form-group">
+          <label id="label" for="artistName">Artist Name:
+            <input id="artist-name" type="text" class="form-control" placeholder="Artist Name" ng-model="festCtrl.artistName" required>
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="form-group">
+          <label id="label" for="actStartTime">Start Time:
+            <input id="act-start-time" class="form-control" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actStartTime" required>
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="form-group">
+          <label id="label" for="actEndTime">End Time:
+            <input id="act-end-time" class="form-control" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actEndTime" required>
+          </label>
+        </div>
       </div>
     </form>
-   <!--    <label for="artistName">Artist Name:
-        <input id="artist-name" type="text" class="input-form" placeholder="Artist Name" ng-model="festCtrl.artistName">
-      </label> -->
-      <label for="actStartTime">Start Time:
-        <input id="act-start-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actStartTime">
-      </label>
-      <label for="actEndTime">End Time:
-        <input id="act-end-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actEndTime">
-      </label>
-
-<!--      <form>
-       <input type="radio" name="bgColor" value="purple" ng-model="festCtrl.bgColor"> Purple<br>
-       <input type="radio" name="bgColor" value="blue" ng-model="festCtrl.bgColor" checked> Blue<br>
-       <input type="radio" name="bgColor" value="red" ng-model="festCtrl.bgColor"> Red
-     </form> -->
-   </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-xs-offset-0">
-  <!--     <label for="actStartTime">Start Time:
-        <input id="act-start-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actStartTime">
-      </label>
-      <label for="actEndTime">End Time:
-        <input id="act-end-time" type="text" datetime-separator=",.-/" datetime="HH:mm" ng-model="festCtrl.actEndTime">
-      </label> -->
-      <h2 class="text-center">{{festCtrl.festival.date|date:'fullDate'}}</h2>
-
-    </div>
-  </div>
-</div>
+</div>  <!-- End of Container -->
 
 <div ng-repeat="stage in festCtrl.festival.stages track by $index">
   <div class="container">
@@ -59,23 +53,20 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="row">
-          <!--// left side bar for stage names //-->
           <div class="stage-time">
             <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
           </div>
-          <div id="artist-box" class="act-on-stage" ng-style="festCtrl.bgColor" style="left: {{festCtrl.leftOffset(act.actStartTime)}}; width: {{festCtrl.actWidth(act)}}; background-color: rgb(66,66,74); height: 58px; border: 1px black solid; position: absolute;" ng-repeat="act in stage.acts track by $index">
+          <div id="artist-box" class="act-on-stage" ng-style="festCtrl.bgColor" style="left: {{festCtrl.leftOffset(act.actStartTime)}}; width: {{festCtrl.actWidth(act)}}; background-color: #737CA1; height: 58px; border: 1px black solid; position: absolute;" ng-repeat="act in stage.acts track by $index">
             <p class="artist-text">{{act.artistName}}</p>
             <p class="artist-text">{{festCtrl.formatTime(act.actStartTime)}} - {{festCtrl.formatTime(act.actEndTime)}}</p>
           </div>
           <div class="stage-row col-xs-11">
           </div>
-          <!-- 1 column for buttons -->
           <div class="col-xs-1">
             <button class="btn btn-primary btn-sm" id="add-artist" ng-click="festCtrl.addAct(stage)">Add Artist</button>
           </div>
         </div>
       </div>
-    <!--// End of the row //-->
     </div>
   </div>
 </div>
