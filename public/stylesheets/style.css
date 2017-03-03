@@ -2,6 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
+/*  Form  */
+
+.form-signin {
+  width: 250px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
 /*   Festival Time Sheet   */
 
 .stage-name {
@@ -53,6 +68,18 @@
   color: #fff;
 }
 
+#fix-footer {
+  width: 40px;
+  margin-left: 1200px;
+}
+
+#margin-fix {
+  margin: 8px 0 10px 0;
+}
+
+.app-title {
+  color: #DC381F;
+}
 /*   ---------------------    */
 
 body {
@@ -61,7 +88,7 @@ body {
 }
 
 header {
-  font-size: 48px;
+  font-size: 58px;
 }
 
 a {
@@ -102,9 +129,35 @@ a {
   background-image: url(/images/homeBG.jpg);
 }
 
+#sign-up-wrapper {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  left: 0px;
+  top: -19px;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: .9;
+  background-image: url(/images/crowdBG.jpg);
+}
+
+#login-up-wrapper {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  left: 0px;
+  top: -19px;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: .9;
+  background-image: url(/images/astroBG.jpg);
+}
+
 #secondary-wrapper {
   width: 100%;
-  height: 380px;
+  height: 200px;
 }
 
 .main-header-box {
@@ -145,6 +198,12 @@ a {
   margin: 0 auto;
 }
 
+.dev-link {
+  width: 80px;
+  margin: 0 25px;
+  height: 80px;
+}
+
 [ui-view].ng-enter {
   transition: opacity 0.8s;
   opacity: 0;
@@ -162,14 +221,15 @@ a {
   opacity: 0;
 }
 
-.second-nav {
-  background-color: rgb(66,66,73);
+.footer-nav {
+  background-color: rgb(235,235,235);
   position: relative;
   text-align: center;
-  bottom: 19px;
+  top: 19px;
   margin: 0 auto;
   height: 55px;
 }
+
 
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,

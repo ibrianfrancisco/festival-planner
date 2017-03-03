@@ -53,8 +53,8 @@
         vm.festival = festival;
         console.log(festival);
         $('#artist-name').val('');
-        $('#act-start-time').val('');
-        $('#act-end-time').val('');
+        // $('#act-start-time').val('');
+        // $('#act-end-time').val('');
       });
     }
 
@@ -80,6 +80,9 @@
       return dt.getHours() + ':' + dt.getMinutes();
     }
 
+    $("#artist-box").on( "click", function( event ) {
+      $( event.delegateTarget ).css( "background-color", "red" );
+    });
   }
 
 })();

@@ -12,7 +12,7 @@
 
     $scope.festivals = Festival.query();
 
-    vm.deleteFestival = function (festival) {
+    vm.deleteFestival = function(festival) {
       var alert = confirm(`You're about to delete this festival, are you sure?`);
       if (alert == true) {
         $scope.festivals.splice($scope.festivals.findIndex(f => f._id === festival._id), 1);
