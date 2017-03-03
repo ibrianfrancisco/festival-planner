@@ -5,18 +5,15 @@
   angular.module('app')
   .controller('FestivalController', FestivalController);
 
-  FestivalController.$inject = ['$state', 'FestivalService', '$scope'];
+  FestivalController.$inject = ['$state', 'Festival', '$scope'];
 
-  function FestivalController($state, FestivalService, $scope) {
+  function FestivalController($state, Festival, $scope) {
     var vm = this;
 
-    // temporary template used to display timeline
-    vm.numbers = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00"];
-
-    $scope.festivals = FestivalService.query();
+    $scope.festivals = Festival.query();
 
     vm.goToFestival = function() {
-      $state.go('festival');
+      $state.go('createfestival');
     }
 
     vm.deleteFestival = function (festival) {
@@ -30,23 +27,32 @@
       }
     }
 
-    vm.createFestival = function(title, date, stageName, stageStartTime, stageEndTime, artistName, actStartTime, actEndTime) {
-      FestivalService.save({
+    vm.deleteStage = function (festival) {
+      festival.$delete(function() {
+        $scope.festivals.stages.splice($scope.festivals.stages.findIndex(t => t._id), 1);
+        console.log('yes');
+      })
+    }
+
+    vm.getFestival = function(festival) {
+      var festId = festival;
+      Festival.getFestival({festId: festId}, function(festival) {
+        console.log(festival);
+        console.log('got festival');
+        vm.festival = festival;
+        $state.go('showfestival', {id: festival._id});
+      })
+    }
+
+    vm.initFestival = function(title, date) {
+      Festival.save({
         title: vm.title,
-        date: vm.date,
-        stageName: vm.stageName,
-        stageStartTime: vm.stageStartTime,
-        stageEndTime: vm.stageEndTime,
-        artistName: vm.artistName,
-        actStartTime: vm.actStartTime,
-        actEndTime: vm.actEndTime
+        date: vm.date
       }, function(data) {
-        console.log('festival created');
+        console.log('initialized Festival');
         $state.go('homepage');
       });
     }
-
-    // vm.test = moment();
 
     $('#festival-button').hover(
       function(){$(this).children("span").toggleClass('glyphicon-pencil');
