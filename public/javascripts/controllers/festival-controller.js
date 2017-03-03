@@ -12,26 +12,14 @@
 
     $scope.festivals = Festival.query();
 
-    vm.goToFestival = function() {
-      $state.go('createfestival');
-    }
-
     vm.deleteFestival = function (festival) {
       var alert = confirm(`You're about to delete this festival, are you sure?`);
       if (alert == true) {
-        festival.$delete(function() {
-          $scope.festivals.splice($scope.festivals.findIndex(t => t._id), 1);
-        });
+        $scope.festivals.splice($scope.festivals.findIndex(f => f._id === festival._id), 1);
+        festival.$delete();
       } else {
         return
       }
-    }
-
-    vm.deleteStage = function (festival) {
-      festival.$delete(function() {
-        $scope.festivals.stages.splice($scope.festivals.stages.findIndex(t => t._id), 1);
-        console.log('yes');
-      })
     }
 
     vm.getFestival = function(festival) {
@@ -44,13 +32,14 @@
       })
     }
 
-    vm.initFestival = function(title, date) {
+    vm.createFestival = function(title, date) {
       Festival.save({
         title: vm.title,
         date: vm.date
       }, function(data) {
         console.log('initialized Festival');
         $state.go('homepage');
+        window.location.reload();
       });
     }
 

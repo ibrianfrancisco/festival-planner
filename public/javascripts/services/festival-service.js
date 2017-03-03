@@ -35,8 +35,6 @@
           url: '/api/stages/:stageId/acts',
           params: {stageId: '@stageId'},
           artistName: 'artistName'
-          // actStartTime: 'actStartTime',
-          // actEndTime: 'actEndTime'
         }
       }
     )

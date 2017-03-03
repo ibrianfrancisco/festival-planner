@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
-
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
 /*   Festival Time Sheet   */
 
@@ -19,7 +18,6 @@
   padding-left: 0px;
   padding-right: 0px;
   left: 0px;
-  /*bottom: 58px;*/
   position: relative;
 }
 
@@ -28,17 +26,6 @@
   top: 15px;
 }
 
-/*.artist-row {
-  width: 975px;
-  height: 58px;
-  position: relative;
-  border: 1px solid black;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: -3px;
-  top: 60px;
-}*/
-
 .stage-time {
   width: 1132px;
 }
@@ -46,23 +33,18 @@
 .stage-times {
   position: relative;
   right: 53px;
-  /*padding: 0 12px 0 40px;*/
   padding: 0 31px;
 }
 
 .hour-box {
-  /*border: 2px solid red;*/
   height: 100%;
   padding-left: 0px;
   padding-right: 0px;
 }
 
 .minute-box {
-  /*border: 1px dashed blue;*/
   height: 57px;
-/*  padding-left: 0px;
-  padding-right: 0px;
-*/}
+}
 
 .artist-text {
   font-size: 11px;
@@ -70,15 +52,6 @@
   text-align: center;
   color: #fff;
 }
-
-
-/*.act-on-stage {
-  position: absolute;
-  height: 58px;
-  width: 91.66%;
-  border: 2px solid black;
-}*/
-
 
 /*   ---------------------    */
 
@@ -95,10 +68,8 @@ a {
   cursor: pointer;
 }
 
-.recently-added {
-  background-color: rgb(66,66,73);
-  position: relative;
-  bottom: 39px;
+.fira-sans {
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .no-padding {
@@ -133,8 +104,7 @@ a {
 
 #secondary-wrapper {
   width: 100%;
-  height: 230px;
-  text-align: center;
+  height: 380px;
 }
 
 .main-header-box {
@@ -192,11 +162,13 @@ a {
   opacity: 0;
 }
 
-.put-something-here {
-  width: 700px;
+.second-nav {
+  background-color: rgb(66,66,73);
+  position: relative;
   text-align: center;
-  height: 200px;
+  bottom: 19px;
   margin: 0 auto;
+  height: 55px;
 }
 
 /* Change Autocomplete styles in Chrome*/

@@ -63,29 +63,9 @@
         loginRequired: true
       })
 
-      .state('settings', {
-        url: '/settings',
-        templateUrl: 'templates/users/settings.html',
-        loginRequired: true
-      })
-
-      .state('festival', {
-        url: '/festival',
-        templateUrl: 'templates/festivals/festival.html',
-        controller: 'FestivalController as festCtrl',
-        loginRequired: true
-      })
-
-      .state('createfestival', {
-        url: '/createfestival',
-        templateUrl: 'templates/festivals/create-festival.html',
-        controller: 'FestivalController as festCtrl',
-        loginRequired: true
-      })
-
       .state('showfestival', {
         url: '/festival/:id',
-        templateUrl: 'templates/festivals/show-festival.html',
+        templateUrl: 'templates/festivals/festival.html',
         controller: 'ShowController as festCtrl',
         loginRequired: true
       })
