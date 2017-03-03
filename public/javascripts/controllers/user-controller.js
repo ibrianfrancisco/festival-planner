@@ -14,7 +14,7 @@
         $state.go('homepage');
       });
       vm.user = {};
-    };
+    }
 
     vm.login = function() {
       UserService.login(vm.user).then(function() {
@@ -23,10 +23,7 @@
         $state.go('login');
       });
       vm.user = {};
-    };
-
+    }
   }
-
-
 
 })();

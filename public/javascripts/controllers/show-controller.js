@@ -10,7 +10,11 @@
   function ShowController($stateParams, Festival, datetime) {
     var vm = this;
 
-    vm.numbers = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00"];
+    vm.timeline = ["12:00", "1:00", "2:00",
+                   "3:00", "4:00", "5:00",
+                   "6:00", "7:00", "8:00",
+                   "9:00", "10:00", "11:00",
+                   "12:00"];
 
     vm.festival = Festival.get({id: $stateParams.id});
 
@@ -32,7 +36,6 @@
         $('#artist-name').val('');
       });
     }
-
 
     vm.leftOffset = function (dateStr) {
       var offsetPerHour = 1072/12;

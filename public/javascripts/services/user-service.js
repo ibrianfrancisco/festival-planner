@@ -18,7 +18,6 @@
       isLoggedIn
     };
 
-    // get logged in user if already exists in server session
     $http.get('/api/users/me').then(function(res) {
       user = res.data;
     });
@@ -44,8 +43,6 @@
     }
 
     return service;
-
-    // helper functions
 
     function getUserFromToken() {
       var token = TokenService.getToken();

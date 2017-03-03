@@ -73,8 +73,6 @@
     $urlRouterProvider.otherwise('/welcome');
   }
 
-
-
 })();
 
 

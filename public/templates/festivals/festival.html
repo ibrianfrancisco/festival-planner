@@ -54,7 +54,7 @@
       <div class="col-xs-12">
         <div class="row">
           <div class="stage-time">
-            <span class="stage-times" ng-repeat="number in festCtrl.numbers track by $index">{{number}}</span>
+            <span class="stage-times" ng-repeat="hour in festCtrl.timeline track by $index">{{hour}}</span>
           </div>
           <div id="artist-box" class="act-on-stage" ng-style="festCtrl.bgColor" style="left: {{festCtrl.leftOffset(act.actStartTime)}}; width: {{festCtrl.actWidth(act)}}; background-color: #737CA1; height: 58px; border: 1px black solid; position: absolute;" ng-repeat="act in stage.acts track by $index">
             <p class="artist-text">{{act.artistName}}</p>

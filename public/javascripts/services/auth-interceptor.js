@@ -15,7 +15,6 @@
         return config;
       },
 
-      // this method will run for every single response
       response: function (response) {
         var token = response.headers('Authorization');
         if (token) TokenService.setToken(token)
