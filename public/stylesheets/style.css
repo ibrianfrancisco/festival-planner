@@ -2,14 +2,53 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
-hr.style-one {
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-    margin-top: 0px;
+/* =======================================================
+*
+*   Template Style
+*
+* ======================================================= */
+body {
+  font-family: 'Raleway', sans-serif;
 }
-/*  Form  */
+#navbar {
+  border: none;
+  margin: 0;
+}
+.main-wrapper {
+  position: relative;
+  background-size: cover;
+  min-height: 700px;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: .9;
+}
+.main-wrapper .main-header-box {
+  position: relative;
+  padding-top: 50px;
+}
+header {
+  font-size: 58px;
+}
+.header-text {
+  color: #fff;
+  text-shadow: 2px 2px #000000;
+}
+@media screen and (max-width: 768px) {
+  .main-wrapper .main-header-box header {
+    font-size: 40px;
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-wrapper .main-header-box h4 {
+    font-size: 15px;
+  }
+}
+
+#secondary-wrapper {
+  height: 200px;
+}
 
 .form-signin {
   width: 250px;
@@ -84,11 +123,6 @@ hr.style-one {
   color: #fff;
 }
 
-#fix-footer {
-  width: 40px;
-  margin-left: 1200px;
-}
-
 #margin-fix {
   margin: 8px 0 10px 0;
 }
@@ -101,23 +135,31 @@ hr.style-one {
   color: #DC381F;
 }
 
-#footer-text {
-  position: relative;
-  top: 33px;
-}
 /*   ---------------------    */
-
-body {
-  font-family: 'Raleway', sans-serif;
-  padding-top: 70px;
-}
-
-header {
-  font-size: 58px;
-}
 
 a {
   cursor: pointer;
+}
+
+#home-filter,
+#fest-header,
+.main-wrapper {
+  padding-top: 50px;
+}
+
+.btn-test {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: .7s ease-out;
+}
+.btn-test:hover {
+  background: #AF9272;
+  border-color: #AF9272;
+}
+.btn-test:focus, .btn-test:active {
+  background: transparent;
+  border-color: #fff;
 }
 
 .fira-sans {
@@ -132,74 +174,12 @@ a {
   color: #fff;
 }
 
-#festival-button {
-  margin-bottom: 20px;
+#home-add-fest {
   height: 50px;
   width: 50px;
   border-radius: 25px;
   outline: none;
   box-shadow: 2px 2px 5px #888888;
-}
-
-#main-wrapper {
-  width: 100%;
-  height: 650px;
-  position: relative;
-  left: 0px;
-  top: -19px;
-  background-size: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: .8;
-  background-image: url(/images/homeBG.jpg);
-}
-
-#sign-up-wrapper {
-  width: 100%;
-  height: 650px;
-  position: relative;
-  left: 0px;
-  top: -19px;
-  background-size: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: .9;
-  background-image: url(/images/crowdBG.jpg);
-}
-
-#login-up-wrapper {
-  width: 100%;
-  height: 650px;
-  position: relative;
-  left: 0px;
-  top: -19px;
-  background-size: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: .9;
-  background-image: url(/images/astroBG.jpg);
-}
-
-#secondary-wrapper {
-  width: 100%;
-  height: 200px;
-}
-
-.main-header-box {
-  width: 800px;
-  height: 170px;
-  padding: 20px;
-
-  position: absolute;
-  top: 40%;
-  left: 50%;
-
-  margin: -220px 0 0 -400px;
-}
-
-.header-text {
-  color: #fff;
-  text-shadow: 2px 2px #000000;
 }
 
 .logo {
@@ -228,6 +208,13 @@ a {
   margin: 0 25px;
   height: 80px;
 }
+@media screen and (max-width: 768px) {
+  .dev-link {
+    width: 55px;
+    margin: 0 20px;
+    height: 55px;
+  }
+}
 
 [ui-view].ng-enter {
   transition: opacity 0.8s;
@@ -246,6 +233,14 @@ a {
   opacity: 0;
 }
 
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  margin-top: 0px;
+}
+
 .footer-nav {
   background-color: rgb(235,235,235);
   position: relative;
@@ -253,20 +248,4 @@ a {
   top: 29px;
   margin: 0 auto;
   height: 63px;
-}
-
-
-/* Change Autocomplete styles in Chrome*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-  transition: background-color 5000s ease-in-out 0s;
 }

@@ -19,7 +19,6 @@
 
     loginBlock.$inject = ['$rootScope', '$state', 'UserService'];
 
-
     function loginBlock($rootScope, $state, UserService) {
       $rootScope.$on('$stateChangeStart', function(evt, toState) {
         if(toState.loggedIn && UserService.isLoggedIn()) {
