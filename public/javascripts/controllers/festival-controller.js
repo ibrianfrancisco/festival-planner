@@ -43,7 +43,7 @@
       });
     }
 
-    $('#festival-button').hover(
+    $('#home-add-fest').hover(
       function(){$(this).children("span").toggleClass('glyphicon-pencil');
     });
 
