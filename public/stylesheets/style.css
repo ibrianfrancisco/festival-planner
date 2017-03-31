@@ -147,6 +147,15 @@ a {
   padding-top: 50px;
 }
 
+#home-filter .row div.col-md-9 {
+  padding: 0;
+}
+
+#home-filter .row .navbar-form {
+  padding: 10px 0 0 0;
+  margin: 10px 0;
+}
+
 .btn-test {
   background: transparent;
   color: #fff;
@@ -181,7 +190,6 @@ a {
   outline: none;
   box-shadow: 2px 2px 5px #888888;
   margin-bottom: 20px;
-  margin-left: 170vh;
 }
 
 .logo {
