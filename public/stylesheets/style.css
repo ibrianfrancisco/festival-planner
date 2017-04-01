@@ -4,16 +4,86 @@
 
 /* =======================================================
 *
-*   Template Style
+*   General
 *
 * ======================================================= */
 body {
   font-family: 'Raleway', sans-serif;
 }
-#navbar {
-  border: none;
-  margin: 0;
+
+/*
+.btn-test {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: .7s ease-out;
 }
+.btn-test:hover {
+  background: #AF9272;
+  border-color: #AF9272;
+}
+.btn-test:focus, .btn-test:active {
+  background: transparent;
+  border-color: #fff;
+}*/
+
+.fira-sans {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/* =======================================================
+*
+*   Welcome Page
+*
+* ======================================================= */
+
+.app-title {
+  color: #DC381F;
+}
+
+.dev-link {
+  width: 80px;
+  margin: 0 25px;
+  height: 80px;
+}
+@media screen and (max-width: 768px) {
+  .dev-link {
+    width: 55px;
+    margin: 0 20px;
+    height: 55px;
+  }
+}
+
+.footer-nav {
+  background-color: rgb(235,235,235);
+  position: relative;
+  text-align: center;
+  top: 29px;
+  margin: 0 auto;
+  height: 63px;
+}
+
+header {
+  font-size: 58px;
+}
+
+.header-text {
+  color: #fff;
+  text-shadow: 2px 2px #000000;
+}
+
+#home-filter,
+.main-wrapper {
+  padding-top: 50px;
+}
+#home-filter .row div.col-md-9 {
+  padding: 0;
+}
+#home-filter .row .navbar-form {
+  padding: 10px 0 0 0;
+  margin: 10px 0;
+}
+
 .main-wrapper {
   position: relative;
   background-size: cover;
@@ -26,13 +96,6 @@ body {
 .main-wrapper .main-header-box {
   position: relative;
   padding-top: 50px;
-}
-header {
-  font-size: 58px;
-}
-.header-text {
-  color: #fff;
-  text-shadow: 2px 2px #000000;
 }
 @media screen and (max-width: 768px) {
   .main-wrapper .main-header-box header {
@@ -50,6 +113,11 @@ header {
   height: 200px;
 }
 
+/* =======================================================
+*
+*   Signup and Login Page
+*
+* ======================================================= */
 .form-signin {
   width: 250px;
   padding: 15px;
@@ -63,139 +131,10 @@ header {
   margin-bottom: 10px;
 }
 
-#label .form-control {
+/*#label .form-control {
   padding: 5px 10px;
   width: 172px;
-}
-
-/*   Festival Time Sheet   */
-
-#stage-input {
-  /*padding: 5px 10px;*/
-  width: 152px;
-}
-.stage-name {
-  top: 10px;
-  right: 10px;
-  position: relative;
-  font-size: 20px;
-}
-
-.stage-row {
-  border: 1px solid black;
-  width: 1072px;
-  height: 58px;
-  padding-left: 0px;
-  padding-right: 0px;
-  left: 0px;
-  position: relative;
-}
-
-#add-artist {
-  position: absolute;
-  top: 15px;
-}
-
-.stage-time {
-  width: 1132px;
-}
-
-.stage-times {
-  position: relative;
-  right: 53px;
-  padding: 0 31px;
-}
-
-.hour-box {
-  height: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.minute-box {
-  height: 57px;
-}
-
-.artist-text {
-  font-size: 11px;
-  font-weight: 900;
-  text-align: center;
-  color: #fff;
-}
-
-#margin-fix {
-  margin: 8px 0 10px 0;
-}
-
-#date-margin-fix {
-  margin: 23px 0 0px 0;
-}
-
-.app-title {
-  color: #DC381F;
-}
-
-/*   ---------------------    */
-
-a {
-  cursor: pointer;
-}
-
-#home-filter,
-#fest-header,
-.main-wrapper {
-  padding-top: 50px;
-}
-
-#home-filter .row div.col-md-9 {
-  padding: 0;
-}
-
-#home-filter .row .navbar-form {
-  padding: 10px 0 0 0;
-  margin: 10px 0;
-}
-
-.btn-test {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  transition: .7s ease-out;
-}
-.btn-test:hover {
-  background: #AF9272;
-  border-color: #AF9272;
-}
-.btn-test:focus, .btn-test:active {
-  background: transparent;
-  border-color: #fff;
-}
-
-.fira-sans {
-  font-family: 'Fira Sans', sans-serif;
-}
-
-.no-padding {
-  padding: 0px;
-}
-
-.white-text {
-  color: #fff;
-}
-
-#home-add-fest {
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  outline: none;
-  box-shadow: 2px 2px 5px #888888;
-  margin-bottom: 20px;
-}
-
-.logo {
-  width: 100px;
-  padding-left: 20px;
-}
+}*/
 
 .login {
   width: 50px;
@@ -209,22 +148,141 @@ a {
   padding-right: 5px;
 }
 
-.margin-zero {
-  margin: 0 auto;
+
+/* =======================================================
+*
+*   Homepage Page
+*
+* ======================================================= */
+#home-add-fest {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  outline: none;
+  box-shadow: 2px 2px 5px #888888;
+  margin-bottom: 20px;
 }
 
-.dev-link {
-  width: 80px;
-  margin: 0 25px;
-  height: 80px;
+/* =======================================================
+*
+*   Festival Page
+*
+* ======================================================= */
+
+#add-artist {
+  position: relative;
+}
+
+#artist-box {
+  background-color: #737CA1;
+  height: 58px;
+  border: 1px black solid;
+  position: absolute;
+  z-index: 1;
+}
+.artist-text {
+  font-size: 11px;
+  font-weight: 900;
+  text-align: center;
+  color: #fff;
+}
+
+#fest-header-box {
+  position: fixed;
+  width: 100%;
+  height: 235px;
+  padding: 20px 40px;
+  top: 50px;
+  z-index: 10;
+  background-image: url("../images/festivalBG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 0%;
+  padding-bottom: 20px;
+  color: #fff;
+}
+#fest-header-box #fest-header h1 {
+  font-size: 60px;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 5px #888888;
+}
+#fest-header-box #fest-header h2 {
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 5px #888888;
+}
+
+#fest-inputs div form {
+  margin: 10px 0;
+}
+#fest-inputs div form input {
+  margin: 0 10px;
+}
+
+#fest-stage-row {
+  position: relative;
+  top: 300px;
+  margin-left: 40px;
+  padding-right: 40px;
+  width: 2185px;
 }
 @media screen and (max-width: 768px) {
-  .dev-link {
-    width: 55px;
-    margin: 0 20px;
-    height: 55px;
+  #fest-stage-row{
+    top: 350px;
+    width: 2215px;
   }
 }
+
+#stage-input {
+  width: 152px;
+}
+.stage-name {
+  position: relative;
+  font-size: 18px;
+}
+.stage-name-row {
+  margin: 10px 0;
+}
+.stage-row {
+  border: 1px solid black;
+  height: 58px;
+  position: relative;
+  background: #eee;
+}
+@media screen and (max-width: 768px) {
+  .stage-row {
+    margin: 0 30px;
+  }
+}
+.stage-times {
+  font-size: .9em;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  right: 45px;
+  height: 24px!important;
+  min-width: 89.33px!important;
+}
+.stage-times:after {
+  content:"";
+  position: absolute;
+  z-index: 1;
+  top: 19px;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid #444;
+  height: 5px;
+}
+@media screen and (max-width: 768px) {
+  .stage-times {
+    right: 14px;
+    min-width: 87.94px!important;
+  }
+}
+
+
+/*   ---------------------    */
+
 
 [ui-view].ng-enter {
   transition: opacity 0.8s;
@@ -241,21 +299,4 @@ a {
 
 [ui-view].ng-leave-active {
   opacity: 0;
-}
-
-hr.style-one {
-  border: 0;
-  height: 1px;
-  background: #333;
-  background-image: linear-gradient(to right, #ccc, #333, #ccc);
-  margin-top: 0px;
-}
-
-.footer-nav {
-  background-color: rgb(235,235,235);
-  position: relative;
-  text-align: center;
-  top: 29px;
-  margin: 0 auto;
-  height: 63px;
 }
