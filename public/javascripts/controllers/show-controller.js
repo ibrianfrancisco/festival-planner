@@ -10,14 +10,14 @@
   function ShowController($stateParams, Festival) {
     var vm = this;
 
-    vm.timeline = ["0:00", "1:00", "2:00",
+    vm.timeline = ["12:00", "1:00", "2:00",
                    "3:00", "4:00", "5:00",
                    "6:00", "7:00", "8:00",
                    "9:00", "10:00", "11:00",
-                   "12:00","13:00", "14:00",
-                   "15:00", "16:00", "17:00",
-                   "18:00", "19:00", "20:00",
-                   "21:00", "22:00", "23:00"];
+                   "12:00","1:00", "2:00",
+                   "3:00", "4:00", "5:00",
+                   "6:00", "7:00", "8:00",
+                   "9:00", "10:00", "11:00"];
 
     vm.festival = Festival.get({id: $stateParams.id});
 
@@ -41,7 +41,7 @@
     }
 
     vm.leftOffset = function (dateStr) {
-      var offsetPerHour = 1072/12;
+      var offsetPerHour = 1080/12;
       var dt = new Date(dateStr);
       var baseDate = new Date(dateStr).setHours(0, 0, 0, 0);
       var hrs = (dt - baseDate) / (1000 * 60 * 60);
@@ -49,7 +49,7 @@
     }
 
     vm.actWidth = function (act) {
-      var widthPerHour = 1072/12;
+      var widthPerHour = 1080/12;
       var diff = (new Date(act.actEndTime).getTime() - new Date(act.actStartTime).getTime());
       diff = diff / (1000 * 60 * 60);
       return (diff * widthPerHour) + 'px';

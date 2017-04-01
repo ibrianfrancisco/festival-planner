@@ -44,22 +44,19 @@
 
   <div id="fest-inputs" class="container">
     <div class="text-center">
-      <form>
-        <button class="btn btn-sm btn-success" type="button" ng-click="festCtrl.addStage()">Add Stage</button>
-        <input type="text" id="stage-input" placeholder="Stage Name" ng-model="festCtrl.stageName" required>
-        <label id="label" for="artistName">Artist Name:
-          <input id="artist-name" type="text" placeholder="Artist Name" ng-model="festCtrl.artistName" required>
-        </label>
-        <label id="label" for="actStartTime">Start Time:
-          <!-- <input id="act-start-time" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actStartTime" required> -->
-          <input id="act-start-time" type="time" name="time" ng-model="festCtrl.actStartTime" required />
-        </label>
-        <label id="label" for="actEndTime">End Time:
-          <!-- <input id="act-end-time" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actEndTime" required> -->
-          <input id="act-end-time" type="time" name="time" ng-model="festCtrl.actEndTime" required/>
-        </label>
-      </form>
-
+      <button class="btn btn-sm btn-success" type="button" ng-click="festCtrl.addStage()">Add Stage</button>
+      <input type="text" id="stage-input" placeholder="Stage Name" ng-model="festCtrl.stageName" required>
+      <label id="label" for="artistName">Artist Name:
+        <input id="artist-name" type="text" placeholder="Artist Name" ng-model="festCtrl.artistName" required>
+      </label>
+      <label id="label" for="actStartTime">Start Time:
+        <!-- <input id="act-start-time" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actStartTime" required> -->
+        <input id="act-start-time" type="time" name="time" ng-model="festCtrl.actStartTime" required />
+      </label>
+      <label id="label" for="actEndTime">End Time:
+        <!-- <input id="act-end-time" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actEndTime" required> -->
+        <input id="act-end-time" type="time" name="time" ng-model="festCtrl.actEndTime" required/>
+      </label>
     </div>
   </div>
 

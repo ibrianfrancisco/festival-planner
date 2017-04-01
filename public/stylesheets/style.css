@@ -199,24 +199,31 @@ header {
   background-size: cover;
   background-position: 100% 0%;
   padding-bottom: 20px;
-  color: #fff;
 }
 #fest-header-box #fest-header h1 {
-  font-size: 60px;
+  font-size: 56px;
   letter-spacing: 4px;
   text-shadow: 2px 2px 5px #888888;
+  color: #fff;
 }
 #fest-header-box #fest-header h2 {
-  font-size: 28px;
+  font-size: 23px;
   letter-spacing: 4px;
   text-shadow: 2px 2px 5px #888888;
+  color: #fff;
+  margin: 10px 0 24px 0;
 }
 
-#fest-inputs div form {
+#fest-inputs div {
   margin: 10px 0;
 }
-#fest-inputs div form input {
+#fest-inputs div label {
+  color: #fff;
+  text-shadow: 2px 2px 5px #888888;
+}
+#fest-inputs div input {
   margin: 0 10px;
+  color: #000;
 }
 
 #fest-stage-row {
@@ -224,13 +231,7 @@ header {
   top: 300px;
   margin-left: 40px;
   padding-right: 40px;
-  width: 2185px;
-}
-@media screen and (max-width: 768px) {
-  #fest-stage-row{
-    top: 350px;
-    width: 2215px;
-  }
+  width: 2200px;
 }
 
 #stage-input {
@@ -241,18 +242,13 @@ header {
   font-size: 18px;
 }
 .stage-name-row {
-  margin: 10px 0;
+  margin: 20px 0 5px 0;
 }
 .stage-row {
   border: 1px solid black;
   height: 58px;
   position: relative;
   background: #eee;
-}
-@media screen and (max-width: 768px) {
-  .stage-row {
-    margin: 0 30px;
-  }
 }
 .stage-times {
   font-size: .9em;
@@ -261,7 +257,7 @@ header {
   display: inline-block;
   right: 45px;
   height: 24px!important;
-  min-width: 89.33px!important;
+  min-width: 90px!important;
 }
 .stage-times:after {
   content:"";
@@ -272,12 +268,6 @@ header {
   left: 50%;
   border-left: 1px solid #444;
   height: 5px;
-}
-@media screen and (max-width: 768px) {
-  .stage-times {
-    right: 14px;
-    min-width: 87.94px!important;
-  }
 }
 
 
