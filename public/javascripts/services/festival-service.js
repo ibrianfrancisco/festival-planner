@@ -13,22 +13,33 @@
       '/api/festivals/:id',
       {id: '@_id'},
       {
-        addStage: {
+        update: { method: 'PUT'},
+        addstage: {
           method: 'POST',
           url: '/api/festivals/:festId/stages',
           params: {festId: '@festId'},
           stageName: 'stageName'
         },
-        getFestival: {
+        getfestival: {
           method: 'GET',
           url: '/api/festivals/:festId',
           params: {festId: '@festId'}
         },
-        addAct: {
+        addact: {
           method: 'POST',
           url: '/api/stages/:stageId/acts',
           params: {stageId: '@stageId'},
           artistName: 'artistName'
+        },
+        deletestage: {
+          method: 'DELETE',
+          url: '/api/stages/:stageId',
+          params: {stageId: '@stageId'}
+        },
+        deleteact: {
+          method: 'DELETE',
+          url: '/api/acts/:stageId/:actId',
+          params: {stageId: '@stageId', actId: '@actId'}
         }
       }
     )

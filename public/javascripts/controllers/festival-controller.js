@@ -24,9 +24,7 @@
 
     vm.getFestival = function(festival) {
       var festId = festival;
-      Festival.getFestival({festId: festId}, function(festival) {
-        console.log(festival);
-        console.log('got festival');
+      Festival.getfestival({festId: festId}, function(festival) {
         vm.festival = festival;
         $state.go('showfestival', {id: festival._id});
       })
@@ -37,7 +35,6 @@
         title: vm.title,
         date: vm.date
       }, function(data) {
-        console.log('initialized Festival');
         $state.go('homepage');
         window.location.reload();
       });

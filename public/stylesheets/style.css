@@ -173,6 +173,13 @@ header {
   position: relative;
 }
 
+.add-stage {
+  position: relative;
+  top: 340px;
+  left: 40px;
+  padding-bottom: 20px;
+}
+
 #artist-box {
   background-color: #737CA1;
   height: 58px;

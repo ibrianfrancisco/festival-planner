@@ -19,9 +19,10 @@ router.use(function(req, res, next) {
 router.get('/festivals', festCtrl.getAllFestivals);
 router.get('/festivals/:id', festCtrl.getFestival);
 router.post('/festivals', festCtrl.createFestival);
-router.delete('/festivals/:id', festCtrl.deleteFestival);
-router.delete('/festivals/:id', festCtrl.deleteStage);
 router.post('/festivals/:id/stages', festCtrl.addStage);
 router.post('/stages/:id/acts', festCtrl.addAct);
+router.delete('/festivals/:id', festCtrl.deleteFestival);
+router.delete('/stages/:id', festCtrl.deleteStage);
+router.delete('/acts/:id/:_id', festCtrl.deleteAct);
 
 module.exports = router;

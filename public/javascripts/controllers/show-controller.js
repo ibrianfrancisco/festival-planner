@@ -5,9 +5,9 @@
   angular.module('app')
   .controller('ShowController', ShowController);
 
-  ShowController.$inject = ['$stateParams', 'Festival'];
+  ShowController.$inject = ['$stateParams', 'Festival', '$scope'];
 
-  function ShowController($stateParams, Festival) {
+  function ShowController($stateParams, Festival, $scope) {
     var vm = this;
 
     vm.timeline = ["12:00", "1:00", "2:00",
@@ -22,14 +22,28 @@
     vm.festival = Festival.get({id: $stateParams.id});
 
     vm.addStage = function() {
-      Festival.addStage({festId: vm.festival._id, stageName: vm.stageName}, function(festival) {
+      Festival.addstage({festId: vm.festival._id, stageName: vm.stageName}, function(festival) {
         vm.festival = festival;
         $('#stage-input').val('');
       });
     }
 
+    vm.deleteAct = function(stage, act) {
+      Festival.deleteact({stageId: stage._id, actId: act._id}, function(festival) {
+        vm.festival = festival;
+      });
+    }
+
+    vm.deleteStage = function (stage) {
+      Festival.deletestage({stageId: stage._id}, function(festival) {
+        vm.festival = festival;
+      });
+    }
+
+
+
     vm.addAct = function(stage) {
-      Festival.addAct({
+      Festival.addact({
         stageId: stage._id,
         artistName: vm.artistName,
         actStartTime: vm.actStartTime,
@@ -57,7 +71,12 @@
 
     vm.formatTime = function(dateStr) {
       var dt = new Date(dateStr);
-      return (dt.getHours()) + ':' + ('0' + dt.getMinutes()).slice(-2);
+      if (dt.getHours() > 12) {
+        return dt.getHours() - 12 + ':' + ('0' + dt.getMinutes()).slice(-2);
+      } else {
+        return (dt.getHours()) + ':' + ('0' + dt.getMinutes()).slice(-2);
+      }
+
     }
 
   }

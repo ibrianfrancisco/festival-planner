@@ -44,17 +44,13 @@
 
   <div id="fest-inputs" class="container">
     <div class="text-center">
-      <button class="btn btn-sm btn-success" type="button" ng-click="festCtrl.addStage()">Add Stage</button>
-      <input type="text" id="stage-input" placeholder="Stage Name" ng-model="festCtrl.stageName" required>
       <label id="label" for="artistName">Artist Name:
         <input id="artist-name" type="text" placeholder="Artist Name" ng-model="festCtrl.artistName" required>
       </label>
       <label id="label" for="actStartTime">Start Time:
-        <!-- <input id="act-start-time" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actStartTime" required> -->
         <input id="act-start-time" type="time" name="time" ng-model="festCtrl.actStartTime" required />
       </label>
       <label id="label" for="actEndTime">End Time:
-        <!-- <input id="act-end-time" type="text" datetime-separator=",.-/" datetime="HH:mm a" ng-model="festCtrl.actEndTime" required> -->
         <input id="act-end-time" type="time" name="time" ng-model="festCtrl.actEndTime" required/>
       </label>
     </div>
@@ -66,6 +62,7 @@
   <div class="stage-name-row">
     <span class="stage-name">{{stage.stageName}}</span>
     <button class="btn btn-primary btn-xs" id="add-artist" ng-click="festCtrl.addAct(stage)">Add Artist</button>
+    <button ng-click="festCtrl.deleteStage(stage)" class="btn btn-danger btn-xs">Delete</button>
   </div>
   <!-- Entire stage timeline -->
   <!-- <div class="row"> -->
@@ -74,6 +71,8 @@
     <div id="artist-box" ng-style="festCtrl.bgColor" style="left: {{festCtrl.leftOffset(act.actStartTime)}}; width: {{festCtrl.actWidth(act)}};" ng-repeat="act in stage.acts track by $index">
       <p class="artist-text">{{act.artistName}}</p>
       <p class="artist-text">{{festCtrl.formatTime(act.actStartTime)}} - {{festCtrl.formatTime(act.actEndTime)}}</p>
+      <button ng-click="festCtrl.deleteAct(stage, act)" class="btn btn-danger btn-xs pull-right">Delete</button>
+
     </div>
 
     <div class="stage-row">
@@ -81,4 +80,10 @@
 
   <!-- </div> end of row -->
 </div>
+
+<div class="add-stage">
+  <button class="btn btn-sm btn-success" type="button" ng-click="festCtrl.addStage()">Add Stage</button>
+  <input type="text" id="stage-input" placeholder="Stage Name" ng-model="festCtrl.stageName" required>
+</div>
+
 
