@@ -7,8 +7,8 @@ module.exports = {
   createFestival,
   deleteFestival,
   addStage,
-  addAct,
   deleteStage,
+  addAct,
   deleteAct
 }
 
@@ -48,35 +48,9 @@ function createFestival(req, res, next) {
 function deleteFestival(req, res, next) {
   Festival.findByIdAndRemove(req.params.id)
   .then(deletedFest => {
-    console.log(deletedFest + 'from deletefest');
     res.json(deletedFest);
   }).catch(err => res.status(400).json(err));
 }
-
-function deleteStage(req, res, next) {
-    Festival.findOne({'stages._id': req.params.id})
-    .then(festival => {
-      festival.stages.remove(req.params.id);
-      return festival.save();
-    })
-    .then(festival => {
-      res.status(200).json(festival);
-    });
-}
-
-function deleteAct(req, res, next) {
-  Festival.findOne({'stages._id': req.params.id})
-  .then(festival => {
-    festival.stages.forEach(function(stage) {
-      stage.acts.remove(req.params._id);
-    })
-    return festival.save()
-    .then(festival => {
-      res.status(200).json(festival);
-    })
-  }).catch(err => res.status(400).json(err));
-}
-
 
 function addStage(req, res, next) {
   Festival.findById(req.params.id)
@@ -84,6 +58,17 @@ function addStage(req, res, next) {
     festival.stages.push({
       stageName: req.body.stageName
     });
+    return festival.save();
+  })
+  .then(festival => {
+    res.status(200).json(festival);
+  });
+}
+
+function deleteStage(req, res, next) {
+  Festival.findOne({'stages._id': req.params.id})
+  .then(festival => {
+    festival.stages.remove(req.params.id);
     return festival.save();
   })
   .then(festival => {
@@ -104,4 +89,17 @@ function addAct(req, res, next) {
   .then(festival => {
     res.status(200).json(festival);
   });
+}
+
+function deleteAct(req, res, next) {
+  Festival.findOne({'stages._id': req.params.stageId})
+  .then(festival => {
+    festival.stages.forEach(function(stage) {
+      stage.acts.remove(req.params.actId);
+    })
+    return festival.save()
+    .then(festival => {
+      res.status(200).json(festival);
+    })
+  }).catch(err => res.status(400).json(err));
 }

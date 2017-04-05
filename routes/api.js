@@ -23,6 +23,6 @@ router.post('/festivals/:id/stages', festCtrl.addStage);
 router.post('/stages/:id/acts', festCtrl.addAct);
 router.delete('/festivals/:id', festCtrl.deleteFestival);
 router.delete('/stages/:id', festCtrl.deleteStage);
-router.delete('/acts/:id/:_id', festCtrl.deleteAct);
+router.delete('/acts/:stageId/:actId', festCtrl.deleteAct);
 
 module.exports = router;

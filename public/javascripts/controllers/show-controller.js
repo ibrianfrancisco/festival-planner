@@ -40,8 +40,6 @@
       });
     }
 
-
-
     vm.addAct = function(stage) {
       Festival.addact({
         stageId: stage._id,
@@ -76,9 +74,15 @@
       } else {
         return (dt.getHours()) + ':' + ('0' + dt.getMinutes()).slice(-2);
       }
-
     }
 
+    $(document).ready(function () {
+      $(document).on('mouseenter', '.divbutton', function () {
+        $(this).find(":button").show();
+      }).on('mouseleave', '.divbutton', function () {
+        $(this).find(":button").hide();
+      });
+    });
   }
 
 })();

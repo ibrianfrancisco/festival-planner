@@ -1,35 +1,17 @@
 <div id="home-filter" class="container">
-  <div class="row">
-    <div class="col-md-9">
-      <h1>Festivals</h1>
-    </div>
-    <div class="col-md-3 navbar-form">
-      <div class="input-group">
-        <div class="input-group-btn">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort By<span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li ng-click="vm.sortBy = 'title'; vm.descending = !vm.descending"><a>Name</a></li>
-            <li ng-click="vm.sortBy = 'date'; vm.descending = !vm.descending"><a>Date</a></li>
-          </ul>
-        </div>
-        <input type="text" ng-model="search" class="form-control" placeholder="Filter" aria-label="...">
-      </div>
-    </div>
-  </div>
+  <h1>My Festivals</h1>
 </div>
+
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-6 col-md-4" ng-repeat="festival in festivals | filter: search | orderBy:vm.sortBy:!vm.descending track by $index">
+    <div id="festival-box" class="col-xs-6 col-md-3" ng-repeat="festival in festivals | filter: search | orderBy:'date' track by $index">
       <div class="thumbnail">
-        <img src="/images/homeBG.jpg" alt="Festival Imgs">
+        <a ng-click="festCtrl.getFestival(festival._id)"><img src="/images/festivalBG.jpg" alt="Festival Imgs"></a>
         <div class="caption">
-          <button ng-click="festCtrl.deleteFestival(festival)" class="btn btn-danger btn-xs pull-right">Delete</button>
-          <h3>{{festival.title}}</h3>
-          <p>{{festival.date | date:'fullDate'}}</p>
-          <span>
-            <a ng-click="festCtrl.getFestival(festival._id)" role="button" class="btn btn-primary btn-sm">Show</a>
-          </span>
+          <button ng-click="festCtrl.deleteFestival(festival)" class="btn btn-danger btn-xs pull-right"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+          <h2 class="fira-sans">{{festival.title}}</h2>
+          <p class="fira-sans">{{festival.date | date:'fullDate'}}</p>
         </div>
       </div>
     </div>
@@ -65,9 +47,7 @@
 
 <footer class="container">
   <div class="row">
-    <button type="button" id="home-add-fest" class="btn btn-danger navbar-fixed-bottom col-xs-2 col-xs-offset-10" data-toggle="modal" data-target="#myModal">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-    </button>
+    <button type="button" id="home-add-fest" class="btn btn-danger navbar-fixed-bottom col-xs-1 col-xs-offset-11" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
   </div>
 </footer>
 

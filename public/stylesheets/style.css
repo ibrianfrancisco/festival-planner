@@ -11,22 +11,6 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-/*
-.btn-test {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  transition: .7s ease-out;
-}
-.btn-test:hover {
-  background: #AF9272;
-  border-color: #AF9272;
-}
-.btn-test:focus, .btn-test:active {
-  background: transparent;
-  border-color: #fff;
-}*/
-
 .fira-sans {
   font-family: 'Fira Sans', sans-serif;
 }
@@ -75,13 +59,6 @@ header {
 #home-filter,
 .main-wrapper {
   padding-top: 50px;
-}
-#home-filter .row div.col-md-9 {
-  padding: 0;
-}
-#home-filter .row .navbar-form {
-  padding: 10px 0 0 0;
-  margin: 10px 0;
 }
 
 .main-wrapper {
@@ -162,6 +139,38 @@ header {
   box-shadow: 2px 2px 5px #888888;
   margin-bottom: 20px;
 }
+#home-filter h1 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 40px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#festival-box h2 {
+  font-size: 28px;
+}
+@media screen and (max-width: 768px) {
+  #festival-box h2 {
+    font-size: 18px;
+    text-align: left;
+  }
+}
+#festival-box p {
+  font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+  #festival-box p {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+#festival-box img {
+  cursor: pointer;
+}
+#festival-box img:hover {
+  box-shadow: 0 0 5px 1px rgba(0,0,0,.6);
+}
+
 
 /* =======================================================
 *
@@ -175,23 +184,58 @@ header {
 
 .add-stage {
   position: relative;
-  top: 340px;
+  top: 330px;
   left: 40px;
   padding-bottom: 20px;
 }
+@media screen and (max-width: 536px) {
+  .add-stage {
+    top: 430px;
+  }
+}
 
 #artist-box {
-  background-color: #737CA1;
+  background-color: rgba(130, 190, 238, 1);
   height: 58px;
   border: 1px black solid;
   position: absolute;
   z-index: 1;
+  border-radius: 1px;
 }
-.artist-text {
+#artist-box button {
+  position: absolute;
+  bottom: 46px;
+}
+#artist-box:hover {
+  box-shadow: 2px 2px 5px #888888;
+}
+.del-btn {
+  text-align: right;
+  margin-right: 13px;
+}
+#artist-box .artist-text {
   font-size: 11px;
-  font-weight: 900;
   text-align: center;
+  vertical-align: middle;
+  position: relative;
   color: #fff;
+  user-select: none;
+  cursor: default;
+  overflow: hidden;
+  margin: 10px 0 0 0;
+  padding: 0 1px;
+}
+#artist-box h5.artist-text {
+  width: 100%;
+}
+#artist-box p.artist-text {
+  font-size: 9px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px 0;
+  background-color: rgba(90, 138, 180, 1);
 }
 
 #fest-header-box {
@@ -207,17 +251,22 @@ header {
   background-position: 100% 0%;
   padding-bottom: 20px;
 }
-#fest-header-box #fest-header h1 {
-  font-size: 56px;
+@media screen and (max-width: 536px) {
+  #fest-header-box {
+    height: 350px;
+  }
+}
+
+#fest-header-box #fest-header {
   letter-spacing: 4px;
   text-shadow: 2px 2px 5px #888888;
   color: #fff;
 }
+#fest-header-box #fest-header h1 {
+  font-size: 56px;
+}
 #fest-header-box #fest-header h2 {
   font-size: 23px;
-  letter-spacing: 4px;
-  text-shadow: 2px 2px 5px #888888;
-  color: #fff;
   margin: 10px 0 24px 0;
 }
 
@@ -240,6 +289,11 @@ header {
   padding-right: 40px;
   width: 2200px;
 }
+@media screen and (max-width: 536px) {
+  #fest-stage-row {
+    top: 400px  ;
+  }
+}
 
 #stage-input {
   width: 152px;
@@ -256,6 +310,7 @@ header {
   height: 58px;
   position: relative;
   background: #eee;
+  border-radius: 2px;
 }
 .stage-times {
   font-size: .9em;
@@ -265,6 +320,8 @@ header {
   right: 45px;
   height: 24px!important;
   min-width: 90px!important;
+  cursor: default;
+  user-select: none;
 }
 .stage-times:after {
   content:"";
