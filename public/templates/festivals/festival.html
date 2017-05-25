@@ -6,16 +6,17 @@
   <div id="fest-inputs" class="container">
     <div class="text-center">
     <form>
-      <label id="label" for="artistName">Event Name:
+      <label for="artistName">Event Name:
         <input id="artist-name" type="text" placeholder="Event Name" ng-model="festCtrl.artistName" required>
       </label>
-      <label id="label" for="actStartTime">Start Time:
+      <label for="actStartTime">Start Time:
         <input id="act-start-time" type="time" name="time" ng-model="festCtrl.actStartTime" required />
       </label>
-      <label id="label" for="actEndTime">End Time:
+      <label for="actEndTime">End Time:
         <input id="act-end-time" type="time" name="time" ng-model="festCtrl.actEndTime" required/>
       </label>
     </form>
+    <p class="fira-sans"></p>
     </div>
   </div>
 </div>
@@ -24,7 +25,8 @@
   <div class="stage-name-row">
     <span class="stage-name">{{stage.stageName}}</span>
     <button class="btn btn-primary btn-xs" id="add-artist" ng-click="festCtrl.addAct(stage)">Add Event</button>
-    <button ng-click="festCtrl.deleteStage(stage)" class="btn btn-danger btn-xs">Delete</button>
+    <button class="btn btn-danger btn-xs" ng-click="festCtrl.deleteStage(stage)">Delete Stage</button>
+    <button class="btn btn-info btn-xs" ng-click="festCtrl.submitEditAct(stage)">Save Edited Act</button>
   </div>
   <!-- Entire stage timeline -->
   <div class="stage-times" ng-repeat="hour in festCtrl.timeline track by $index">{{hour}}</div>
@@ -32,7 +34,7 @@
     <div class="del-btn">
       <button ng-click="festCtrl.deleteAct(stage, act)" type="button" style="display: none;" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
     </div>
-    <h5 class="artist-text">{{act.artistName}}</h5>
+    <h5 class="artist-text" data-num="{{act._id}}" ng-dblclick="festCtrl.editAct(act)">{{act.artistName}}</h5>
     <p class="artist-text">{{festCtrl.formatTime(act.actStartTime)}} - {{festCtrl.formatTime(act.actEndTime)}}</p>
   </div>
   <div class="stage-row">

@@ -13,7 +13,6 @@
       '/api/festivals/:id',
       {id: '@_id'},
       {
-        update: { method: 'PUT'},
         addstage: {
           method: 'POST',
           url: '/api/festivals/:festId/stages',
@@ -40,6 +39,11 @@
           method: 'DELETE',
           url: '/api/acts/:stageId/:actId',
           params: {stageId: '@stageId', actId: '@actId'}
+        },
+        editact: {
+          method: 'PUT',
+          url: '/api/stages/:stageId/acts',
+          params: {stageId: '@stageId'}
         }
       }
     )

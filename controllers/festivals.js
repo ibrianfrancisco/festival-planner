@@ -5,11 +5,12 @@ module.exports = {
   getAllFestivals,
   getFestival,
   createFestival,
+  editAct,
   deleteFestival,
   addStage,
   deleteStage,
   addAct,
-  deleteAct
+  deleteAct,
 }
 
 function getAllFestivals(req, res, next) {
@@ -43,6 +44,25 @@ function createFestival(req, res, next) {
       }).catch(err => res.status(400).json(err));
     });
   });
+}
+
+function editAct(req, res, next) {
+  Festival.findOne({'stages._id': req.params.id})
+  .then(festival => {
+    festival.stages.forEach(stage => {
+      if (stage._id == req.params.id) {
+        stage.acts.forEach(act => {
+          if (act._id == req.body.edited) {
+            act.artistName = req.body.artistName;
+          }
+        })
+      }
+    })
+    return festival.save()
+  })
+  .then(festival => {
+    res.status(200).json(festival);
+  })
 }
 
 function deleteFestival(req, res, next) {

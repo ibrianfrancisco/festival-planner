@@ -9,7 +9,7 @@
 
   function ShowController($stateParams, Festival, $scope) {
     var vm = this;
-
+    vm.edited;
     vm.timeline = ["12:00", "1:00", "2:00",
                    "3:00", "4:00", "5:00",
                    "6:00", "7:00", "8:00",
@@ -22,33 +22,77 @@
     vm.festival = Festival.get({id: $stateParams.id});
 
     vm.addStage = function() {
-      Festival.addstage({festId: vm.festival._id, stageName: vm.stageName}, function(festival) {
+      Festival.addstage({festId: vm.festival._id, stageName: vm.stageName}, festival => {
         vm.festival = festival;
         $('#stage-input').val('');
       });
     }
 
+    vm.editAct = function(act) {
+      let $actNames = document.querySelectorAll('#artist-box h5');
+      $actNames.forEach(actName => {
+        if (actName.dataset.num === act._id) {
+          $(actName).html(
+            `<input type="text" id="edit" value="${act.artistName}" required>`
+          );
+          vm.actName = document.getElementById('edit').value;
+          vm.edited = actName.dataset.num;
+        }
+      })
+    }
+
+    vm.submitEditAct = function(stage) {
+      let $actNames = document.querySelectorAll('#artist-box h5');
+      vm.actName = document.getElementById('edit').value;
+      Festival.editact({
+        stageId: stage._id,
+        artistName: vm.actName,
+        edited: vm.edited
+      }, festival => {
+        $actNames.forEach(actName => {
+          if (actName.dataset.num === vm.edited) {
+            $(actName).html(
+              `${vm.actName}`
+            );
+          }
+        })
+        vm.festival = festival;
+      });
+    }
+
     vm.deleteAct = function(stage, act) {
-      Festival.deleteact({stageId: stage._id, actId: act._id}, function(festival) {
+      Festival.deleteact({stageId: stage._id, actId: act._id}, festival => {
         vm.festival = festival;
       });
     }
 
     vm.deleteStage = function (stage) {
-      Festival.deletestage({stageId: stage._id}, function(festival) {
+      Festival.deletestage({stageId: stage._id}, festival => {
         vm.festival = festival;
       });
     }
 
     vm.addAct = function(stage) {
+      let $artistName = $('#artist-name');
+      let $startTime = $('#act-start-time');
+      let $endTime = $('#act-end-time');
+      const warningText = document.querySelector('#fest-inputs p.fira-sans');
+
+      if ($artistName.val() === '' || $startTime.val() === '' || $endTime.val() === '') return;
+      if (parseFloat($startTime.val()) >= parseFloat($endTime.val())) {
+        return warningText.textContent = 'End time must be after Start time';
+      }
       Festival.addact({
         stageId: stage._id,
         artistName: vm.artistName,
         actStartTime: vm.actStartTime,
         actEndTime: vm.actEndTime
-      }, function(festival) {
+      }, festival => {
         vm.festival = festival;
-        $('#artist-name').val('');
+        $artistName.val('');
+        $startTime.val('');
+        $endTime.val('');
+        warningText.textContent = '';
       });
     }
 

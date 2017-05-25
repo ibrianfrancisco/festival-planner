@@ -237,6 +237,9 @@ header {
   padding: 3px 0;
   background-color: rgba(90, 138, 180, 1);
 }
+#artist-box h5 input {
+  color: #000;
+}
 
 #fest-header-box {
   position: fixed;
