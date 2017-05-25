@@ -1,10 +1,8 @@
 # Festival v.0.8
 
 ### Description
-> Figuring out who to watch at music festivals have become much more difficult. With some events including 100+ artists packed into six stages in only a three day weekend.. there will definitely be some conflicts in watching some of your favorites.
-> 
-> This is where Festival comes in. It will allow a user to plan out their day at a music festival. With so many artists to choose from, it can become hard to visualize what you're going to do each day and who to watch. Festival will allow users to input who to watch and what to do at each stage.
-> 
+
+> Festival is a scheduling app for music festivals using frameworks such as AngularJS and Express. It allows users to plan out their day at the event and organize what to do there. Simply create an account, make a festival and begin adding timelines and events to it. 
 ![alt](https://i.imgur.com/S3Qi4p0.png)
 
 ### Technologies Used
@@ -12,7 +10,6 @@
 - JavaScript
 - MEAN Stack
 - jQuery
-- angular-datetime module
 - Bootstrap
 - mLab
 
@@ -25,7 +22,7 @@
 
 - Working with dates and the math to figure out
 - The data model and figuring out the most efficient way to structure it
-- Approaching adding stages and artists the wrong way
+- Approached adding stages and artists the wrong way
 
 ### Future updates
 #### v.1.0.2
