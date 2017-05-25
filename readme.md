@@ -2,8 +2,12 @@
 
 ### Description
 
-> Festival is a scheduling app for music festivals using frameworks such as AngularJS and Express. It allows users to plan out their day at the event and organize what to do there. Simply create an account, make a festival and begin adding timelines and events to it. Currently playing around with the jQuery UI and working on the editing portion for the events and stages.
+> Festival is a scheduling app for music festivals using frameworks such as AngularJS and Express. It allows users to plan out their day at the event and organize what to do there. Simply create an account, make a festival and begin adding timelines and events to it.
 ![alt](https://i.imgur.com/S3Qi4p0.png)
+
+### Currently
+ - Playing around with the jQuery UI
+ - Working on the edit/updating portion for events and stages.
 
 ### Technologies Used
 - HTML5 / CSS3
