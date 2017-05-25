@@ -44,6 +44,11 @@
           method: 'PUT',
           url: '/api/stages/:stageId/acts',
           params: {stageId: '@stageId'}
+        },
+        editstage: {
+          method: 'PUT',
+          url: '/api/stages/:stageId',
+          params: {stageId: '@stageId'}
         }
       }
     )

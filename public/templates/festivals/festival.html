@@ -23,7 +23,7 @@
 
 <div id="fest-stage-row" ng-repeat="stage in festCtrl.festival.stages track by $index">
   <div class="stage-name-row">
-    <span class="stage-name">{{stage.stageName}}</span>
+    <span class="stage-name" data-stage="{{stage._id}}" ng-dblclick="festCtrl.editStage(stage)">{{stage.stageName}}</span>
     <button class="btn btn-primary btn-xs" id="add-artist" ng-click="festCtrl.addAct(stage)">Add Event</button>
     <button class="btn btn-danger btn-xs" ng-click="festCtrl.deleteStage(stage)">Delete Stage</button>
     <button class="btn btn-info btn-xs" ng-click="festCtrl.submitEditAct(stage)">Save Edited Act</button>

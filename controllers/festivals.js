@@ -6,6 +6,7 @@ module.exports = {
   getFestival,
   createFestival,
   editAct,
+  editStage,
   deleteFestival,
   addStage,
   deleteStage,
@@ -62,6 +63,13 @@ function editAct(req, res, next) {
   })
   .then(festival => {
     res.status(200).json(festival);
+  })
+}
+
+function editStage(req, res, next) {
+  Festival.findOne({'stages._id': req.params.id})
+  .then(festival => {
+    console.log(festival);
   })
 }
 

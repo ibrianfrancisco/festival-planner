@@ -25,5 +25,6 @@ router.delete('/festivals/:id', festCtrl.deleteFestival);
 router.delete('/stages/:id', festCtrl.deleteStage);
 router.delete('/acts/:stageId/:actId', festCtrl.deleteAct);
 router.put('/stages/:id/acts', festCtrl.editAct);
+router.put('/stages/:id', festCtrl.editStage);
 
 module.exports = router;

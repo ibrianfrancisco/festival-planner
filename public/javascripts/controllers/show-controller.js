@@ -60,6 +60,42 @@
       });
     }
 
+    // vm.editStage = function(stage) {
+    //   function submitStage() {
+    //     let $stageNames = document.querySelectorAll('#fest-stage-row .stage-name-row .stage-name');
+    //     vm.stageName = document.getElementById('editStage').value;
+    //     Festival.editstage({
+    //       stageId: stage._id,
+    //       artistName: vm.stageName,
+    //       edited: vm.edited
+    //     }, festival => {
+    //       $stageNames.forEach(stageName => {
+    //         if (stageName.dataset.stage === vm.edited) {
+    //           $(stageName).html(
+    //             `${vm.stageName}`
+    //           );
+    //         }
+    //       })
+    //       vm.festival = festival;
+    //     });
+    //   }
+
+    //   let $stageNames = document.querySelectorAll('#fest-stage-row .stage-name-row .stage-name');
+    //   $stageNames.forEach(stageName => {
+    //     if (stageName.dataset.stage === stage._id) {
+    //       $(stageName).html(
+    //         `
+    //         <form onsubmit="submitStage()">
+    //           <input type="text" id="editStage" value="${stage.stageName}" required>
+    //         </form>
+    //          `
+    //       );
+    //       vm.stageName = document.getElementById('editStage').value;
+    //       vm.edited = stageName.dataset.stage;
+    //     }
+    //   })
+    // }
+
     vm.deleteAct = function(stage, act) {
       Festival.deleteact({stageId: stage._id, actId: act._id}, festival => {
         vm.festival = festival;
