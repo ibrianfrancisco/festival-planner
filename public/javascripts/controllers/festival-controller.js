@@ -25,6 +25,8 @@
     vm.getFestival = function(festival) {
       var festId = festival;
       Festival.getfestival({festId: festId}, function(festival) {
+        console.log(festival);
+        console.log(festival.title);
         vm.festival = festival;
         $state.go('showfestival', {id: festival._id});
       })

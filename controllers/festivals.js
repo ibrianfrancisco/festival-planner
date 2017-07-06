@@ -11,7 +11,7 @@ module.exports = {
   addStage,
   deleteStage,
   addAct,
-  deleteAct,
+  deleteAct
 }
 
 function getAllFestivals(req, res, next) {

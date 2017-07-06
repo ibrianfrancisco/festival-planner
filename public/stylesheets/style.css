@@ -285,6 +285,14 @@ header {
   color: #000;
 }
 
+.wrapper {
+  display: flex;
+}
+
+#fest-inputs label {
+  flex: 1;
+}
+
 #fest-stage-row {
   position: relative;
   top: 300px;
